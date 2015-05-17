@@ -1,0 +1,26 @@
+\section{Selective Symbolic Execution}\label{sec:s2e}
+
+\textbf{Symbolic execution} is an advanced analysis technique particularly suited for automated software testing \todo{cite!} and malware analysis \todo{cite}.
+Instead of concrete input (7, ``string'', ...) symbolic execution uses symbolic values ($\lambda$, $\beta$, ...) when processing code.
+Assignments in the program path have impacts on these symbolic values.
+The integer calculation $x = x - 2$, for instance, would update the symbolic expression representing the input $x$ to $\lambda - 2$.
+Conditional statements (if <condition> then ... else ...) fork program execution into two new paths.
+Both paths are then constrained by an additional condition, the `then' branch with the if-condition and the `else' branch with the negated if-condition respectively.
+
+Following this procedure results in a tree-like structure of constrained symbolic expressions.
+A constraint solver can now take all these constraints along one execution path as input and find one concrete input (e.g., $\lambda = 5$) which would lead to the program following just this path.
+This alleviates writing reproducible test cases \todo{cite}.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+§2	Selective Symbolic Execution
+		> Theorie-Teil
+		> Was ist Symbolic Execution?
+		> Was kann Selective Symbolic Execution besser?
+			(Concrete -> symbolic transition usw.)
+		> Konsistenzmodelle (wird hier evtl. schwierig, das richtige Maß 
+			zu finden, um die Sache auf wenig Platz zu verstehen)
+\fi
