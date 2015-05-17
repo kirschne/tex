@@ -8,11 +8,17 @@ Conditional statements (if <condition> then ... else ...) fork program execution
 Both paths are then constrained by an additional condition, the `then' branch with the if-condition and the `else' branch with the negated if-condition respectively.
 
 Following this procedure results in a tree-like structure of constrained symbolic expressions.
-A constraint solver can now take all these constraints along one execution path as input and find one concrete input (e.g., $\lambda = 5$) which would lead to the program following just this path.
-This alleviates writing reproducible test cases \todo{cite}.
+A constraint solver can now take all constraints along one execution path as input and find one concrete input (e.g., $\lambda = 5$) which would lead to the program following exactly this path.
+Such results greatly alleviate writing reproducible test cases \todo{cite}.
 
+On a technical level, symbolic execution engines save state information (program memory, constraint information, ...) in a custom data structure.
+Each conditional statement involving symbolic values results in a $fork$ of the program state.
+The two newly created branches are completely independent and can therefore be processed in parallel.
 
+But the exponential growth of conditionals soon reveals scaling problems of this forking strategy.
+Despite heavy research on optimisations mitigating this $path explosion$ problem \todo{cite} only relatively small programs (thousands of lines of code) can be analysed symbolically \todo{cite}.
 
+In addition to the path explosion problem, classical symbolic execution ... interaction with the environment...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
