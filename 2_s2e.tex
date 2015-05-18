@@ -33,10 +33,22 @@ However, due to the complexity of real-world systems, building a model of the en
 \bigskip
 
 % -------- selective symbolic execution -------- %
-In order to overcome the problems of conventional symbolic execution, Chipounov et al.~developed the concept of \textbf{selective symbolic execution} (\sse) \todo{cite}.
+In order to overcome typical problems of conventional symbolic execution, Chipounov et al.~from the Swiss Federal Institute of Technology in Lausanne (EPFL) developed the concept of \textbf{selective symbolic execution} (\sse) \todo{cite}.
 Based on a virtual execution platform \sse gives users the illusion of running the entire system symbolically.
 By limiting the scope of interest (i.e.~which parts of the system should be executed symbolically), users can effectively restrain the path explosion problem.
-Execution within this scope follows the 
+Program code within this defined scope is executed symbolically, whereas out-of-scope parts, which are irrelevant to the analysis, switch to concrete execution.
+%One of the main contributions of the EPFL team around Chipounov is the transparent and consistent management of switching between symbolic and concrete execution modes.
+
+% puning for scalability -> bringen?
+
+Definition of the scope of interest (what to execute symbolically) is highly flexible.
+Users may specify whole executables, code regions, or even single variables to be executed symbolically. Everything else will be treated concretely.
+
+%This forth and back conversion -> challenge!
+But since on a technical level symbolical and concrete execution are handled very differently - concrete code may run natively while symbolic instructions need to be emulated - switching back and forth these two modes is a major challenge.
+Hence one of the main contributions of the EPFL team around Chipounov is the transparent and consistent management of switching between symbolic and concrete execution modes.
+
+
 
 
 
