@@ -1,5 +1,6 @@
 \section{Selective Symbolic Execution}\label{sec:s2e}
 
+% -------- symbolic execution -------- %
 \textbf{Symbolic execution} is an advanced analysis technique particularly suited for automated software testing \todo{cite!} and malware analysis \todo{cite}.
 Instead of concrete input (7, ``string'', ...) symbolic execution uses symbolic values ($\lambda$, $\beta$, ...) when processing code.
 Assignments in the program path have impacts on these symbolic values.
@@ -15,10 +16,32 @@ On a technical level, symbolic execution engines save state information (program
 Each conditional statement involving symbolic values results in a $fork$ of the program state.
 The two newly created branches are completely independent and can therefore be processed in parallel.
 
+% -------path explosion
 But the exponential growth of conditionals soon reveals scaling problems of this forking strategy.
-Despite heavy research on optimisations mitigating this $path explosion$ problem \todo{cite} only relatively small programs (thousands of lines of code) can be analysed symbolically \todo{cite}.
+Despite heavy research on optimisations mitigating this \textit{path explosion} problem \todo{cite} only relatively small programs ($\cong$ thousands of lines of code) can be analysed symbolically \todo{cite}.
 
-In addition to the path explosion problem, classical symbolic execution ... interaction with the environment...
+% -------interaction with env
+%In addition to the path explosion problem, classical symbolic execution ... interaction with the environment...
+Additionally, symbolic execution faces problems when the program under analysis \textit{interacts with its environment}.
+If it calls a system library like $libc$, in theory the whole system stack including invoked libraries, operating system and drivers would have to be executed symbolically.
+Considering the path explosion problem mentioned before, the resulting complexity makes such a profound analysis hardly feasible.
+
+% --------standard sol
+One way to solve this problem is to build abstract models of the program's environment \todo{cite}.
+However, due to the complexity of real-world systems, building a model of the entire system is both tedious and unnecessary - the user usually wants to analyse one single program and not the whole system \todo{cite}.
+
+\bigskip
+
+% -------- selective symbolic execution -------- %
+In order to overcome the problems of conventional symbolic execution, Chipounov et al.~developed the concept of \textbf{selective symbolic execution} (\sse) \todo{cite}.
+Based on a virtual execution platform \sse gives users the illusion of running the entire system symbolically.
+By limiting the scope of interest (i.e.~which parts of the system should be executed symbolically), users can effectively restrain the path explosion problem.
+Execution within this scope follows the 
+
+
+
+% -------- Konsistenzmodelle -------- %
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
