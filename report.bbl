@@ -7,9 +7,25 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{1}
 
+\bibitem{chip14s2e}
+Vitaly Chipounov, \emph{{S2E: A Platform for In-Vivo Multi-Path Analysis of
+  Software Systems}}, Ph.D. thesis, {\'{E}}cole Polytechnique
+  F{\'{e}}d{\'{e}}rale de Lausanne (EPFL), 2014.
+
 \bibitem{chip09sel}
 Vitaly Chipounov, Vlad Georgescu, Cristian Zamfir, and George Candea,
-  \emph{Selective symbolic execution}, Workshop on Hot Topics in Dependable
-  Systems, Citeseer, 2009.
+  \emph{Selective {S}ymbolic {E}xecution}, 5th Workshop on Hot Topics in System
+  Dependability (HotDep), 2009.
+
+\bibitem{chip11s2e}
+Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea, \emph{{S2E: A
+  Platform for In-Vivo Multi-Path Analysis of Software Systems}}, 16th Intl.
+  Conference on Architectural Support for Programming Languages and Operating
+  Systems (ASPLOS), 2011.
+
+\bibitem{chip12s2e}
+\bysame, \emph{The {S2E} {P}latform: {D}esign, {I}mplementation, and
+  {A}pplications}, ACM Transactions on Computer Systems (TOCS) \textbf{30}
+  (2012).
 
 \end{thebibliography}
