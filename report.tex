@@ -1,69 +1,23 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,twocolumn]{article}
+
+\usepackage{abstract}
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{calc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
 
 \usepackage[english]{babel}
-\usepackage[T1]{fontenc}
-%\usepackage[latin1]{inputenc}	
-\usepackage[utf8]{inputenc}	
-
-%\usepackage{colortbl}
-\usepackage[usenames,dvipsnames]{color} % for code listings
-% Sequence diagrams
-\usepackage[underline=true]{pgf-umlsd}
-\usetikzlibrary{calc}
-\usepackage[top=3cm, left=3cm, right=3cm, bottom=3cm]{geometry}								% marges
-
-\usepackage{array,multirow,multicol,tabularx}		
-
-\usepackage{amsmath,amssymb,mathrsfs}	
-%\usepackage{mathtools}
-
-\usepackage{soul}
-%\usepackage{pifont}
-
-\usepackage{multicol}
-
-\usepackage{fancybox}
-
-%\usepackage{epic, eepic}
-\usepackage{graphicx}
-
-\usepackage{float,picins}
-
-\usepackage{hyperref}
-
-\usepackage{listings}
-
-\usepackage{ccaption}
-
 \usepackage{pgf,tikz}
-\usetikzlibrary{arrows}
 
-\usepackage{thmbox}
+\title{Selective Symbolic Execution \\ \large Binary analysis in user space using the \sse platform}
 
-\usepackage{placeins}
-
-\usepackage{etex}
-
-\usepackage{xspace}
-
-%\usepackage[ruled,vlined]{algorithm2e}
-
-\usepackage{graphicx}
-\graphicspath{{images/}}
-
-
-\makeatletter
-
-\newskip\@bigflushglue \@bigflushglue = -100pt plus 1fil
-
-\def\bigcenter{\trivlist \bigcentering\item\relax}
-\def\bigcentering{\let\\\@centercr\rightskip\@bigflushglue%
-\leftskip\@bigflushglue
-\parindent\z@\parfillskip\z@skip}
-\def\endbigcenter{\endtrivlist}
-
-\makeatother
-
+\author{Bj\"{o}rn Kirschner \texttt{<{kirschne}{@}{in.tum.de}>}\\
+  \emph{Technische Universit\"{a}t M\"{u}nchen}}
 
 %todo anfang
   \newcommand{\todo}[1]{
@@ -98,66 +52,17 @@
 % -------------- custom commands: ---------------
 \newcommand{\sse}{S\textsuperscript{2}E\xspace}
 
-
-
-%________________________________________________________
-
 \begin{document}
 
-\noindent %
-\begin{minipage}{0.5\textwidth}
-\begin{flushleft}
-	\begin{tabular}{lm{6cm}}
-	\multirow{5}{*}{\includegraphics[scale=1]{images/IN_logo.png}} \\
-	 &  \\
-	 & Bj\"{o}rn Kirschner \\
-	 &  \\
-	 & \\
-	 & \\
-	\end{tabular}
-\end{flushleft}
-\end{minipage}
-\hfill
-\begin{minipage}{0.5\textwidth}
-\begin{flushright}
-	\includegraphics[scale=1]{images/tum_logo.png}
-\end{flushright}
-\end{minipage}
+\maketitle
 
-\begin{center}
-{\LARGE\textbf{\textsc{GetInTUM - Door Access System}}}
+\begin{abstract}
+  Bla blablablal blablablal blablablal blablablal blablablal blablablal 
+  blablablal blablablal blablablal blablablal blablablal blablablal 
+  blablablal blablablal blablablal blablablal blablablal 
+  blablablal blablablal blablablal blablablal 
+\end{abstract}
 
-\large \textit{Idea Report for Android Practical Course (F13)} \\
-\large \today
-\end{center}
-
-\bigskip
-\bigskip
-
-\hrule
-\bigskip
-\bigskip
-
-% -------------------- kill this bullshit! ---------------------- %
-\iffalse
-\begin{bigcenter}
-\begin{tabular}{cccc}
-\includegraphics[height=3.4cm]{images/img__small.jpg}&
-\includegraphics[height=3.4cm]{images/img__small.jpg}&
-\includegraphics[height=3.4cm]{images/img__small.jpg}\\
-jgfhr & tztuz & jhkl
-\end{tabular}
-\end{bigcenter}
-\fi
-
-\newpage
-\bigskip
-\tableofcontents
-
-\bigskip
-\bigskip
-\bigskip
-\hrule
 
 \input{1_intro.tex}
 \input{2_s2e.tex}
@@ -168,5 +73,9 @@ jgfhr & tztuz & jhkl
 \input{7_outlook.tex}
 \input{8_rel_work.tex}
 \input{9_conclusion.tex}
+
+\bibliographystyle{amsplain}
+\bibliography{report}
+
 
 \end{document}
