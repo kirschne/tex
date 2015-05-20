@@ -35,7 +35,10 @@ In order to keep the mix of symbolic and concrete execution consistent, \sse sto
 Users work with \sse by writing selection and analysis plugins or by simply configuring \sse's standard plugins according to their needs.
 Plugins subscribe to system-wide events (e.g., $onInstrExecution$) and can perform logging/monitoring tasks or even manipulate the system state.
 
+Configuration usually starts with defining what parts of the system to explore symbolically.
+This can for example be done with \sse's selection plugin $CodeSelector$, which restricts symbolic execution to a specified module or code region.
 
+Standard analysis plugins allow users to find bugs ($WinBugCheck$), monitor memory ($MemoryChecker$), study performance characteristics ($PerformanceProfiler$) and much more (see \cite{chip14s2e}, p.~50).
 % - ------- hier mehr?
 \todo{m?}
 
