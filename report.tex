@@ -14,17 +14,19 @@
 \usepackage[english]{babel}
 \usepackage{pgf,tikz}
 
-\title{Selective Symbolic Execution \\ \large Binary analysis in user space using the \sse platform}
+\graphicspath{{images/}}
+
+\title{Selective Symbolic Execution \\ \large Analysis of user space binaries using the \sse platform}
 
 \author{Bj\"{o}rn Kirschner \texttt{<{kirschne}{@}{in.tum.de}>}\\
-  \emph{Technische Universit\"{a}t M\"{u}nchen}}
+  \emph{Technische Universit\"{a}t M\"{u}nchen (TUM)}}
 
 %todo anfang
   \newcommand{\todo}[1]{
   % Add to todo list
   \addcontentsline{tdo}{todo}{\protect{#1}}
   %
-  \begin{tikzpicture}[remember picture, baseline=-0.75ex]
+  \begin{tikzpicture}[remember picture, baseline=-0.35ex]
       \node [coordinate] (inText) {};
   \end{tikzpicture}
   %
@@ -33,7 +35,7 @@
       \begin{tikzpicture}[remember picture]
           \definecolor{orange}{rgb}{1,0.5,0}
    
-          \draw node[draw=black, fill=orange, text width = 3cm] (inNote)
+          \draw node[draw=black, fill=orange, text width = 0.2cm, text height = 0.1cm] (inNote)
                    {#1};
       \end{tikzpicture}
   }

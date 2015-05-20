@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  19 MAY 2015 23:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  20 MAY 2015 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,6 +464,9 @@ s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 ))) (./report.aux
 
+LaTeX Warning: Label `fig:arch' multiply defined.
+
+
 LaTeX Warning: Label `sec:plan' multiply defined.
 
 
@@ -475,18 +478,18 @@ LaTeX Warning: Label `sec:plan' multiply defined.
 )
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 \c@lstlisting=\count120
  (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -550,47 +553,47 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 57.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 59.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 57.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 59.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 []\T1/cmr/m/n/9 Bla blablablal blablablal blablablal
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 60--64
+Underfull \hbox (badness 2486) in paragraph at lines 62--66
 \T1/cmr/m/n/9 blablablal blablablal blablablal blablablal
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 60--64
+Underfull \hbox (badness 2486) in paragraph at lines 62--66
 \T1/cmr/m/n/9 blablablal blablablal blablablal blablablal
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 60--64
+Underfull \hbox (badness 2486) in paragraph at lines 62--66
 \T1/cmr/m/n/9 blablablal blablablal blablablal blablablal
  []
 
 
-Underfull \hbox (badness 2486) in paragraph at lines 60--64
+Underfull \hbox (badness 2486) in paragraph at lines 62--66
 \T1/cmr/m/n/9 blablablal blablablal blablablal blablablal
  []
 
@@ -600,37 +603,99 @@ Underfull \hbox (badness 3000) in paragraph at lines 1--1
  []
 
 
-Overfull \hbox (88.42255pt too wide) in paragraph at lines 4--4
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 4--4
+[][][][]\T1/cmr/m/n/10 ct  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 4--4
 [][] 
  []
 
 
-Overfull \hbox (88.42255pt too wide) in paragraph at lines 4--4
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 4--4
+[][][][]\T1/cmr/m/n/10 ct  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 4--4
+[][] 
+ []
+
+
+Overfull \hbox (12.49954pt too wide) in paragraph at lines 10--10
+[][][][]\T1/cmr/m/n/10 Bild 
+ []
+
+
+Overfull \hbox (2.08542pt too wide) in paragraph at lines 10--10
+\T1/cmr/m/n/10 > 
+ []
+
+
+Overfull \hbox (14.30466pt too wide) in paragraph at lines 10--10
+\T1/cmr/m/n/10 Text  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 10--10
 [][] 
  []
 
 
 LaTeX Warning: Marginpar on page 1 moved.
 
+<images/symb_exe_2.pdf, id=4, 474.56793pt x 140.57826pt>
+File: images/symb_exe_2.pdf Graphic file (type pdf)
 
-Overfull \hbox (88.42255pt too wide) in paragraph at lines 21--21
+<use images/symb_exe_2.pdf>
+Package pdftex.def Info: images/symb_exe_2.pdf used on input line 13.
+(pdftex.def)             Requested size: 221.0pt x 65.46474pt.
+
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 28--28
+[][][][]\T1/cmr/m/n/10 ct  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 28--28
 [][] 
  []
 
 
-Overfull \hbox (88.42255pt too wide) in paragraph at lines 30--30
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 37--37
+[][][][]\T1/cmr/m/n/10 ct  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 37--37
 [][] 
  []
 
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Overfull \hbox (88.42255pt too wide) in paragraph at lines 51--51
+ <./images/symb_exe_2.pdf>]
+Overfull \hbox (7.91733pt too wide) in paragraph at lines 58--58
+[][][][]\T1/cmr/m/n/10 kill  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 58--58
 [][] 
  []
 
-) (./3_platform.tex) (./4_proj.tex) (./5_impl.tex) (./6_ana.tex
+) (./3_platform.tex
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 5--5
+[][] 
+ []
+
+<images/s2e_arch.pdf, id=106, 446.97586pt x 370.55087pt>
+File: images/s2e_arch.pdf Graphic file (type pdf)
+
+<use images/s2e_arch.pdf>
+Package pdftex.def Info: images/s2e_arch.pdf used on input line 9.
+(pdftex.def)             Requested size: 221.0pt x 183.21121pt.
+) (./4_proj.tex) (./5_impl.tex) (./6_ana.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\T1/cmr/bx/n/14.4 Action Plan-ning and
  []
@@ -650,23 +715,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\T1/cmr/bx/n/14.4 Action Plan-ning and
  []
 
-) (./report.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) (./report.bbl [2 <./images/s2e_arch.pdf>]) [3
 
-) [2]
-(./report.aux)
+] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13829 strings out of 493109
- 265597 string characters out of 6135004
- 309394 words of memory out of 5000000
- 16970 multiletter control sequences out of 15000+600000
- 19990 words of font info for 59 fonts, out of 8000000 for 9000
+ 13853 strings out of 493109
+ 266072 string characters out of 6135004
+ 308676 words of memory out of 5000000
+ 16990 multiletter control sequences out of 15000+600000
+ 21641 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,9n,54p,409b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,9n,54p,409b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -682,11 +745,15 @@ e/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2014
 /texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on report.pdf (2 pages, 208321 bytes).
+exmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on report.pdf (3 pages, 542470 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 190 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
