@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pdflatex report
+pdflatex report
+

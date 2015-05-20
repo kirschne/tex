@@ -5,7 +5,25 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{klee}
+\emph{{KLEE}}, https://klee.github.io.
+
+\bibitem{llvm}
+\emph{{LLVM}}, http://llvm.org.
+
+\bibitem{qemu}
+\emph{{QEMU}}, http://qemu.org.
+
+\bibitem{qemu05}
+Fabrice Bellard, \emph{{QEMU, a Fast and Portable Dynamic Translator}}, USENIX
+  Annual Technical Conference, FREENIX Track, 2005, pp.~41--46.
+
+\bibitem{klee08}
+Cristian Cadar, Daniel Dunbar, and Dawson~R Engler, \emph{{KLEE: Unassisted and
+  Automatic Generation of High-Coverage Tests for Complex Systems Programs}},
+  OSDI, vol.~8, 2008, pp.~209--224.
 
 \bibitem{chip14s2e}
 Vitaly Chipounov, \emph{{S2E: A Platform for In-Vivo Multi-Path Analysis of
@@ -27,5 +45,11 @@ Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea, \emph{{S2E: A
 \bysame, \emph{The {S2E} {P}latform: {D}esign, {I}mplementation, and
   {A}pplications}, ACM Transactions on Computer Systems (TOCS) \textbf{30}
   (2012).
+
+\bibitem{llvm04}
+Chris Lattner and Vikram Adve, \emph{{LLVM: A compilation framework for
+  lifelong program analysis \& transformation}}, Code Generation and
+  Optimization, 2004. CGO 2004. International Symposium on, IEEE, 2004,
+  pp.~75--86.
 
 \end{thebibliography}

@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  20 MAY 2015 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  20 MAY 2015 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**report.tex
+**report
 (./report.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
@@ -695,6 +695,31 @@ File: images/s2e_arch.pdf Graphic file (type pdf)
 <use images/s2e_arch.pdf>
 Package pdftex.def Info: images/s2e_arch.pdf used on input line 9.
 (pdftex.def)             Requested size: 221.0pt x 183.21121pt.
+ [2 <./images/s2e_arch.pdf>]
+Underfull \hbox (badness 2941) in paragraph at lines 35--37
+[]\T1/cmr/m/n/10 Users work with S$[]$E by writ-ing se-lec-tion
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 35--37
+\T1/cmr/m/n/10 and anal-y-sis plu-g-ins or by sim-ply con-fig-ur-ing
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 35--37
+\T1/cmr/m/n/10 Plu-g-ins sub-scribe to system-wide events (e.g.,
+ []
+
+
+Overfull \hbox (7.36191pt too wide) in paragraph at lines 40--40
+[][][][]\T1/cmr/m/n/10 m?  
+ []
+
+
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 40--40
+[][] 
+ []
+
 ) (./4_proj.tex) (./5_impl.tex) (./6_ana.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\T1/cmr/bx/n/14.4 Action Plan-ning and
@@ -715,21 +740,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 []\T1/cmr/bx/n/14.4 Action Plan-ning and
  []
 
-) (./report.bbl [2 <./images/s2e_arch.pdf>]) [3
+) (./report.bbl
+Underfull \hbox (badness 1708) in paragraph at lines 20--22
+\T1/cmr/m/n/10 ni-cal Con-fer-ence, FREENIX Track, 2005,
+ []
 
-] (./report.aux)
+
+Underfull \hbox (badness 1014) in paragraph at lines 45--48
+\T1/cmr/m/it/10 men-ta-tion, and Ap-pli-ca-tions\T1/cmr/m/n/10 , ACM Trans-
+ []
+
+) [3] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13853 strings out of 493109
- 266072 string characters out of 6135004
- 308676 words of memory out of 5000000
- 16990 multiletter control sequences out of 15000+600000
+ 13862 strings out of 493109
+ 266198 string characters out of 6135004
+ 308781 words of memory out of 5000000
+ 16999 multiletter control sequences out of 15000+600000
  21641 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,9n,54p,409b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,9n,54p,405b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -750,7 +783,7 @@ mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on report.pdf (3 pages, 542470 bytes).
+Output written on report.pdf (3 pages, 550334 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams
