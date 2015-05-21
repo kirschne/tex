@@ -47,8 +47,8 @@ Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea, \emph{{S2E: A
   (2012).
 
 \bibitem{llvm04}
-Chris Lattner and Vikram Adve, \emph{{LLVM: A compilation framework for
-  lifelong program analysis \& transformation}}, Code Generation and
+Chris Lattner and Vikram Adve, \emph{{LLVM: A Compilation Framework for
+  Lifelong Program Analysis \& Transformation}}, Code Generation and
   Optimization, 2004. CGO 2004. International Symposium on, IEEE, 2004,
   pp.~75--86.
 
