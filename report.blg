@@ -9,32 +9,32 @@ Warning--to sort, need author or key in llvm
 Warning--missing pages in chip12s2e
 You've used 11 entries,
             2213 wiz_defined-function locations,
-            552 strings with 5396 characters,
-and the built_in function-call counts, 3284 in all, are:
-= -- 289
-> -- 115
+            553 strings with 5454 characters,
+and the built_in function-call counts, 3267 in all, are:
+= -- 286
+> -- 114
 < -- 1
-+ -- 49
-- -- 37
-* -- 211
-:= -- 476
++ -- 48
+- -- 36
+* -- 207
+:= -- 478
 add.period$ -- 11
 call.type$ -- 11
-change.case$ -- 53
+change.case$ -- 51
 chr.to.int$ -- 0
 cite$ -- 15
 duplicate$ -- 169
 empty$ -- 326
-format.name$ -- 37
-if$ -- 732
+format.name$ -- 36
+if$ -- 728
 int.to.chr$ -- 0
 int.to.str$ -- 11
 missing$ -- 18
 newline$ -- 43
-num.names$ -- 15
-pop$ -- 95
+num.names$ -- 16
+pop$ -- 93
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 40
 quote$ -- 0
 skip$ -- 131
 stack$ -- 0
@@ -45,7 +45,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 44
 warning$ -- 4
-while$ -- 27
+while$ -- 28
 width$ -- 13
 write$ -- 98
 (There were 4 warnings)
