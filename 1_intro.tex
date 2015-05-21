@@ -1,8 +1,41 @@
 \bigskip
-\bigskip
+
+\section{Introduction}
 
 % use cases (sel symb exe paper kap 2) hier hinein?
 
+Frequently developers need to understand software systems.
+In a very simple case they just analyse their own code or test the interaction of own programs with other components or with the surrounding environment in general.
+Testing self-written programs conceptually permits the application of the whole arsenal of analysis techniques.
+
+
+Things become interesting when analysis has to be performed without access to source code or documentation.
+Scenarios for this situation include the need to check proprietary third party software for interoperability on existing servers, performance, unwanted side effects, and much more.
+Security-critical environments additionally require reliable guarantees of the benignity of all employed software.
+
+
+One mighty solution for such system analysis is the \sse platform developed at the Swiss Federal Institute of Technology in Lausanne (EPFL) \cite{chip11s2e}.
+Its goal is to provide a tool set for rapid development of analysis tools like performance profilers, bug finders, reverse engineering solutions and the like \cite{chip12s2e}.
+\sse combines several key characteristics:
+
+1.) The ability to explore entire \textit{families of execution paths} helps to obtain reliable information about the target system.
+Abstracting from single-path exploration to sets of execution paths which share specific properties is vital for predictive analyses.
+This technique can for example prove the non-existence of critical corner cases which might be overlooked by other testing strategies.
+% ...and hence provides more reliable results.
+%Particularly for predictive tasks the analysis of sets of execution paths which share specific properies
+%This is often necessary for predictive analyses, where classical single-path exploration techniques fail to provide reliable results.
+
+2.) \textit{In-vivo analysis}, meaning the analysis of a program within its real-world environment (libraries, kernel, drivers, etc.), facilitates extremely realistic and accurate results.
+
+3.) Working directly on \textit{binaries} further increases the degree of realism in system analyses, as it allows to include closed source modules into the investigation.
+
+What I do is bla...
+...justify the choice of \sse as platform for system analysis.
+
+
+
+Chapter \ref{sec:s2e} explains...,
+then bla, then bla
 
 %\newpage
 \iffalse
@@ -55,7 +88,7 @@
 		> Fazit: war die Sache sinnvoll und erfolgreich?
 \fi
 
-\section{Introduction}
+
 
 
 

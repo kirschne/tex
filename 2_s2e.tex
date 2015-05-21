@@ -44,7 +44,7 @@ However, due to the complexity of real-world systems, building a model of the en
 \bigskip
 
 % -------- selective symbolic execution -------- %
-In order to overcome typical problems of conventional symbolic execution, Chipounov et al.~from the Swiss Federal Institute of Technology in Lausanne (EPFL) developed the concept of \textbf{selective symbolic execution} (\sse) \cite{chip09sel}.
+In order to overcome typical problems of conventional symbolic execution, Chipounov et al.~at EPFL developed the concept of \textbf{selective symbolic execution} (\sse) \cite{chip09sel}.
 Based on a virtual execution platform \sse gives users the illusion of running the entire system symbolically.
 By limiting the scope of interest (i.e.~which parts of the system should be executed symbolically), users can effectively restrain the path explosion problem.
 Program code within this defined scope is executed symbolically, whereas out-of-scope parts, which are irrelevant to the analysis, switch to concrete execution.
