@@ -16,6 +16,12 @@
 \bibitem{qemu}
 \emph{{QEMU}}, http://qemu.org.
 
+\bibitem{trojan14}
+Radu Banabic, George Candea, and Rachid Guerraoui, \emph{{Finding Trojan
+  Message Vulnerabilities in Distributed Systems}}, Proceedings of the 19th
+  international conference on Architectural support for programming languages
+  and operating systems, ACM, 2014, pp.~113--126.
+
 \bibitem{qemu05}
 Fabrice Bellard, \emph{{QEMU, a Fast and Portable Dynamic Translator}}, USENIX
   Annual Technical Conference, FREENIX Track, 2005, pp.~41--46.

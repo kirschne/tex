@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  21 MAY 2015 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  21 MAY 2015 12:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -594,42 +594,42 @@ Underfull \hbox (badness 3000) in paragraph at lines 1--1
  []
 
 
-Overfull \hbox (2.64084pt too wide) in paragraph at lines 4--4
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 8--8
 [][][][]\T1/cmr/m/n/10 ct  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 4--4
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 8--8
 [][] 
  []
 
 
-Overfull \hbox (2.64084pt too wide) in paragraph at lines 4--4
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 8--8
 [][][][]\T1/cmr/m/n/10 ct  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 4--4
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 8--8
 [][] 
  []
 
 
-Overfull \hbox (12.49954pt too wide) in paragraph at lines 10--10
+Overfull \hbox (12.49954pt too wide) in paragraph at lines 14--14
 [][][][]\T1/cmr/m/n/10 Bild 
  []
 
 
-Overfull \hbox (2.08542pt too wide) in paragraph at lines 10--10
+Overfull \hbox (2.08542pt too wide) in paragraph at lines 14--14
 \T1/cmr/m/n/10 > 
  []
 
 
-Overfull \hbox (14.30466pt too wide) in paragraph at lines 10--10
+Overfull \hbox (14.30466pt too wide) in paragraph at lines 14--14
 \T1/cmr/m/n/10 Text  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 10--10
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 14--14
 [][] 
  []
 
@@ -640,25 +640,25 @@ LaTeX Warning: Marginpar on page 1 moved.
 File: images/symb_exe_2.pdf Graphic file (type pdf)
 
 <use images/symb_exe_2.pdf>
-Package pdftex.def Info: images/symb_exe_2.pdf used on input line 13.
+Package pdftex.def Info: images/symb_exe_2.pdf used on input line 17.
 (pdftex.def)             Requested size: 221.0pt x 65.46474pt.
 
-Overfull \hbox (2.64084pt too wide) in paragraph at lines 28--28
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 32--32
 [][][][]\T1/cmr/m/n/10 ct  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 28--28
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 32--32
 [][] 
  []
 
 
-Overfull \hbox (2.64084pt too wide) in paragraph at lines 37--37
+Overfull \hbox (2.64084pt too wide) in paragraph at lines 41--41
 [][][][]\T1/cmr/m/n/10 ct  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 37--37
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 41--41
 [][] 
  []
 
@@ -666,12 +666,12 @@ Overfull \hbox (8.75476pt too wide) in paragraph at lines 37--37
 
 
  <./images/symb_exe_2.pdf>]
-Overfull \hbox (7.91733pt too wide) in paragraph at lines 58--58
+Overfull \hbox (7.91733pt too wide) in paragraph at lines 62--62
 [][][][]\T1/cmr/m/n/10 kill  
  []
 
 
-Overfull \hbox (8.75476pt too wide) in paragraph at lines 58--58
+Overfull \hbox (8.75476pt too wide) in paragraph at lines 62--62
 [][] 
  []
 
@@ -732,21 +732,18 @@ Overfull \hbox (8.75476pt too wide) in paragraph at lines 21--21
 [][] 
  []
 
-) (./5_impl.tex) (./6_ana.tex) (./7_outlook.tex
-Underfull \vbox (badness 1975) has occurred while \output is active []
-
-)
-(./8_rel_work.tex) (./9_conclusion.tex) (./report.bbl
-Underfull \hbox (badness 1708) in paragraph at lines 20--22
+) (./5_impl.tex) (./6_ana.tex) (./7_outlook.tex) (./8_rel_work.tex)
+(./9_conclusion.tex) (./report.bbl
+Underfull \hbox (badness 1708) in paragraph at lines 26--28
 \T1/cmr/m/n/10 ni-cal Con-fer-ence, FREENIX Track, 2005,
  []
 
-
-Underfull \hbox (badness 1014) in paragraph at lines 45--48
+[3]
+Underfull \hbox (badness 1014) in paragraph at lines 51--54
 \T1/cmr/m/it/10 men-ta-tion, and Ap-pli-ca-tions\T1/cmr/m/n/10 , ACM Trans-
  []
 
-[3]) [4
+) [4
 
 ] (./report.aux)
 
@@ -754,10 +751,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13868 strings out of 493109
- 266325 string characters out of 6135004
- 308878 words of memory out of 5000000
- 17005 multiletter control sequences out of 15000+600000
+ 13869 strings out of 493109
+ 266335 string characters out of 6135004
+ 308883 words of memory out of 5000000
+ 17006 multiletter control sequences out of 15000+600000
  21641 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,9n,54p,405b,606s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -781,7 +778,7 @@ mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on report.pdf (4 pages, 553100 bytes).
+Output written on report.pdf (4 pages, 553704 bytes).
 PDF statistics:
  193 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams
