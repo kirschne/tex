@@ -50,23 +50,55 @@ By limiting the scope of interest (i.e.~which parts of the system should be exec
 Program code within this defined scope is executed symbolically, whereas out-of-scope parts, which are irrelevant to the analysis, switch to concrete execution.
 %One of the main contributions of the EPFL team around Chipounov is the transparent and consistent management of switching between symbolic and concrete execution modes.
 
-% puning for scalability -> bringen?
+% pruning for scalability -> bringen?
 
 Definition of the scope of interest (what to execute symbolically) is highly flexible.
 Users may specify whole executables, code regions, or even single variables to be executed symbolically. Everything else will be treated concretely.
 
-%This forth and back conversion -> challenge!
-But since on a technical level symbolical and concrete execution are handled very differently - concrete code may run natively while symbolic instructions need to be emulated - switching back and forth these two modes is a major challenge.
+% This forth and back conversion -> challenge!
+But since on a technical level symbolic and concrete execution are handled very differently - concrete code may run natively while symbolic instructions need to be emulated - switching back and forth these two modes is a major challenge.
 Hence one of the main contributions of the EPFL team around Chipounov is the transparent and consistent management of switching between symbolic and concrete execution modes.
 
-\todo{kill}
-\cite{chip09sel}
-\cite{chip11s2e}
-\cite{chip12s2e}
-\cite{chip14s2e}
+% Bild mit Baum: single-multi-path execution
+
+Figure \ref{fig:tree} depicts the \textbf{interplay of symbolic and concrete execution}.
+The illustration is based on a scenario where an application $App$ is tested.
+A function $appFn$ invokes the method $libFn$ in a library $Lib$, which in turn calls a function $sysFn$ in the kernel.
+Since we suspect a bug in $libFn$, we focus our analysis upon this function.
+Due to the path explosion problem, symbolically executing the entire system stack is not feasible.
+Hence only execution inside $libFn$ follows this technique.
+
+\textbf{Concrete} $\rightarrow$ \textbf{symbolic transition:}
+When execution enters the function $libFn$ it has to change from concrete into symbolic domain (grey areas).
+This is done by replacing concrete parameters in the method call with symbolic variables.
+The call $libFn(10)$ becomes $libFn(\lambda)$, optionally also with constraints: $libFn(\lambda \le 15)$.\\
+Besides the symbolic multi-path execution, \sse simultaneously also runs the function with its original concrete arguments.
+This is necessary in order to return a correct calculation result to $appFn$ and thus keep the execution of $App$ consistent.
 
 
+\begin{figure}
+\includegraphics[width=\columnwidth]{tree}
+\caption{Selective symbolic execution: only paths inside a defined scope of interest (here: a library function $libFn$) are explored symbolically - the rest of the system stack runs concretely \cite{chip14s2e}.}
+\label{fig:tree}
+\end{figure}
 
+\textbf{Symbolic} $\rightarrow$ \textbf{concrete transition:}
+Since the operating system is not focus of this analysis example, \sse has to switch from symbolic to concrete domain when $libFn$ calls into the kernel.
+This is done by randomly picking a concrete value which fulfils all path constraints.
+If, for instance, the current path is constrained with $x \in$ $]-\infty;5]$, \sse might choose $x=4$ and call $sysFn(4)$.\\
+However, when $sysFn(4)$ returns, $libFn$ can no longer make any assumptions about any $x \neq 4$, because the behaviour of $sysFn$ in those cases remains unclear.
+In order to preserve correctness, a new constraint $x = 4$ has to be added to the path\footnote{Constraints added because of a symbolic $\rightarrow$ concrete transition are called `soft constraints'.}.
+But imagine $libFn$ being implemented as shown in figure \ref{fig:tree2}; now the `then' branch of the if-condition ($x < 0$) can never be reached.
+Chipounov calls this effect ``overconstraining'' \cite{chip14s2e} - it is a result of concretising x when leaving the symbolic domain.
+\sse tackles the problem by going back in the execution tree and forking an additional sub-tree.
+The new sub-tree now picks a different concrete value for x which allows to enter the previously unreachable `then' branch.
+% ----------- expand - corset - Begriffe bringen?
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{symb_exe}
+\caption{Excerpt from $libFn$'s execution tree \cite{chip12s2e}}
+\label{fig:tree2}
+\end{figure}
 
 
 % -------- Konsistenzmodelle -------- %

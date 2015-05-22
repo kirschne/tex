@@ -5,17 +5,18 @@ Based on the concepts described in the previous chapter, Chipounov and his team 
 These symbolic parts are translated into an intermediate representation (\todo{.}), while irrelevant instructions are directly passed to the host for native execution.
 
 
+Technical backbone of \sse are the virtual machine hypervisor QEMU \cite{qemu, qemu05}, the symbolic execution engine KLEE \cite{klee, klee08} and the LLVM compiler infrastructure \cite{llvm, llvm04}.
+Figure \ref{fig:arch} gives an overview of how these technologies are integrated into the \sse platform.
+The top of the picture depicts the software stack of the guest system (=the system under analysis), which is managed by QEMU.
+\sse is not restricted to user land applications, but also allows inspection on deeper levels (e.g., operating system functions).
+
+
 \begin{figure}
 \includegraphics[width=\columnwidth]{s2e_arch}
 \caption{Architecture of the \sse platform \cite{chip12s2e}}
 \label{fig:arch}
 \end{figure}
 
-
-Technical backbone of \sse are the virtual machine hypervisor QEMU \cite{qemu, qemu05}, the symbolic execution engine KLEE \cite{klee, klee08} and the LLVM compiler infrastructure \cite{llvm, llvm04}.
-Figure \ref{fig:arch} gives an overview of how these technologies are integrated into the \sse platform.
-The top of the picture depicts the software stack of the guest system (=the system under analysis), which is managed by QEMU.
-\sse is not restricted to user land applications, but also allows inspection on deeper levels (e.g., operating system functions).
 
 For easier emulation, QEMU translates machine code of the guest system into an intermediate representation, called $microoperations$.
 \sse's dynamic binary translator (DBT) splits the resulting microoperations into those that need to be explored symbolically and those which may run concretely.
