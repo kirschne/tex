@@ -2,50 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: report.aux
 The style file: amsplain.bst
-Database file #1: report.bib
+Database file #1: bib.bib
 Warning--to sort, need author or key in qemu
 Warning--to sort, need author or key in klee
 Warning--to sort, need author or key in llvm
 Warning--missing pages in chip12s2e
-You've used 11 entries,
+You've used 12 entries,
             2213 wiz_defined-function locations,
-            553 strings with 5454 characters,
-and the built_in function-call counts, 3267 in all, are:
-= -- 286
-> -- 114
+            559 strings with 5788 characters,
+and the built_in function-call counts, 3822 in all, are:
+= -- 336
+> -- 152
 < -- 1
-+ -- 48
-- -- 36
-* -- 207
-:= -- 478
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 51
++ -- 63
+- -- 50
+* -- 252
+:= -- 565
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 61
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 169
-empty$ -- 326
-format.name$ -- 36
-if$ -- 728
+cite$ -- 16
+duplicate$ -- 189
+empty$ -- 363
+format.name$ -- 50
+if$ -- 846
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 18
-newline$ -- 43
-num.names$ -- 16
-pop$ -- 93
+int.to.str$ -- 12
+missing$ -- 20
+newline$ -- 46
+num.names$ -- 18
+pop$ -- 105
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 49
 quote$ -- 0
-skip$ -- 131
+skip$ -- 150
 stack$ -- 0
-substring$ -- 168
-swap$ -- 41
+substring$ -- 197
+swap$ -- 48
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 48
 warning$ -- 4
-while$ -- 28
-width$ -- 13
-write$ -- 98
+while$ -- 33
+width$ -- 14
+write$ -- 108
 (There were 4 warnings)

@@ -53,6 +53,13 @@ Chris Lattner and Vikram Adve, \emph{{LLVM: A Compilation Framework for
   Optimization, 2004. CGO 2004. International Symposium on, IEEE, 2004,
   pp.~75--86.
 
+\bibitem{nasa08}
+Corina Pasareanu, Peter~C Mehlitz, David Bushnell, Karen Gundy-Burlet, Michael
+  Lowry, Suzette Person, and Mark Pape, \emph{{Combining Unit-Level Symbolic
+  Execution and System-Level Concrete Execution for Testing NASA Software}},
+  Proceedings of the 2008 international symposium on Software testing and
+  analysis, ACM, 2008, pp.~15--26.
+
 \bibitem{chip12s2e}
 {Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea}, \emph{The {S2E}
   {P}latform: {D}esign, {I}mplementation, and {A}pplications}, ACM Transactions

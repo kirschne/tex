@@ -2,7 +2,7 @@
 
 Based on the concepts described in the previous chapter, Chipounov and his team implemented the \sse platform, an open source framework for writing custom system analysis tools.
 \sse employs the theoretical concepts of selective symbolic execution by running the system under analysis in a virtual machine and treating code within the scope of interest as symbolic.
-These symbolic parts are translated into an intermediate representation (\todo{.}), while irrelevant instructions are directly passed to the host for native execution.
+These symbolic parts are translated into an intermediate representation (LLVM IR), while irrelevant instructions are directly passed to the host for native execution.
 
 
 Technical backbone of \sse are the virtual machine hypervisor QEMU \cite{qemu, qemu05}, the symbolic execution engine KLEE \cite{klee, klee08} and the LLVM compiler infrastructure \cite{llvm, llvm04}.
