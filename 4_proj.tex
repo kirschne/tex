@@ -1,4 +1,4 @@
-\section{Project Idea}\label{sec:proj}
+\section{Project Idea and Research Questions}\label{sec:proj}
 
 The practical part of this project strives to explore privacy issues in a sample binary.
 
@@ -12,13 +12,39 @@ This work will focus on the scenario that an application (intentionally or unint
 
 Due to the difficulty of finding a real-world program which shows exactly this desired behaviour and also in general the complexity of real-world applications, the showcase described here bases on a little self-written program.
 
-The software works as follows:
+The scenario works as follows: The freeware tool \app found in the internet claims to be handy for estimating your personal tax load.
+The tool announces to display a decent advertisement on every startup, which suggests a common and reasonably sound business model.
+It promises to treat all personal data confidentially, but since the application is closed source, of course this claim cannot be verified easily.
 
-What we do not want is...
+To make sure that \app does not compromise the user's privacy, it shall be analysed using selective symbolic execution techniques and the \sse platform.
+
+\bigskip
+
+For a general overview, often a good first step is to have a glance at the program's assembly code.
+Since static code analysis of large programs is a very time-consuming task\todo{obf}, that is not what we want to do here.
+Nevertheless, some useful information can be retrieved from the assembly code quite easily.
+A look at the list of invoked external libraries shows that \app communicates over network sockets, i.e.~uses the C library functions connect, write, etc.\todo{cmd}
+That is of course not really surprising as the program relies on advertisements as a business model.
+However, such connections to the internet are always delicate and could potentially leak personal data.
+Therefore further analysis in this paper will focus on the following concrete questions:
+\begin{enumerate}
+  \item When (under which conditions) are connections to the internet established?
+  \item What data is transferred in these connections?
+  \item Does a connection to the internet leak personal data?
+\end{enumerate}
+These questions could of course be tackled via many different analysis techniques.
+Simply debugging the program should already lead to a rough understanding of the program's behaviour.
+Applying techniques like fuzzing \todo{cit} could increase code coverage with the goal of not missing exotic or covert execution paths.
+This paper, however, will rely on analysis using selective symbolic execution as described in chapter \ref{sec:s2e}.\todo{why}
 
 
-All analysis will be done using the \sse platform.
-\todo{m?}
+%The software works as follows:
+
+%What we do not want is...
+
+
+%All analysis will be done using the \sse platform.
+%\todo{m?}
 
 \iffalse
 §4	Project idea: explore privacy issues in a sample binary

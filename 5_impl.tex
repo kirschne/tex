@@ -1,5 +1,30 @@
 \section{Implementation}\label{sec:impl}
 
+As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
+
+In the \textbf{code selection phase} \sse is configured to focus on the program \app in user space only.
+The whole environment will be treated as a black box.
+% Possible calls into the kernel are assumed to work correctly.
+Symbolic execution will only be applied inside the code of \app.
+
+The next step is to precisely specify which variables shall be treated symbolically.
+In general, as a start we want to make all user inputs symbolic.
+For a closed source binary this can be done in several ways.
+A command line tool can be called from a wrapper program which hands over symbolic arguments instead of concrete ones.
+If user input is entered in a UI, a further code into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.\todo{..}
+%look for ... calls...
+\sse can intercept execution of the specified memory addresses and replace them with symbolic values (state:writeMemorySymb(\ldots)).\todo{con?}
+% consistency models?????
+
+KLEE, the engine for symbolic execution, also requires some configuration.
+As path search strategy this analysis uses a depth first search.
+\todo{..}
+
+\bigskip
+
+Most logic in the \textbf{analysis part} relies on \sse's \textit{Annotations} plugin.
+It allows fine monitoring and even fiddling with the execution state by annotating single instructions or functions in the program binary.
+
 
 
 \iffalse
