@@ -1,5 +1,7 @@
 \section{Implementation}\label{sec:impl}
 
+\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste.\todo{.}
+
 As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
 
 In the \textbf{code selection phase} \sse is configured to focus on the program \app in user space only.
@@ -44,14 +46,20 @@ The function \textit{send\_data}, for instance, is called with one parameter, wh
 Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
 
 4.) read (or write) registers (EAX, ESP, ...).
-...
+... Check out call conventions of write, ...
+%This may either be used to check the current internal state, or...
 
 5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
-...
+... Nice for controlling consistency models. Not used currently.
 
 
 Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
 
+\bigskip
+
+In addition to the \textit{Annotations} plugin, analysis in this paper also employs the \textit{TestCaseGenerator}.
+For each execution path, it finds concrete inputs for all symbolic variables.
+Those will be printed upon termination of the path and, apart from helping to understand the program, may serve as input for further testing.
 
 
 

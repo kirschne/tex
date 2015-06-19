@@ -1,5 +1,20 @@
 \section{Analysis of \sse Output}\label{sec:ana}
 
+Each execution of \sse creates a folder for the analysis output.
+Apart from the general log files, where all plugins write important messages, some plugins also create separate files.
+One file for memory ..., one with LLVM bytecode, one ...\todo{..}
+
+All important information about \sse's general execution is accumulated in \textit{messages.txt}.
+Backbone of this file is information about all execution paths, where they were forked, how they are constrained, when and why they were terminated, and much more.
+%But it is also used by other plugins...
+
+Thanks to the clear structure of \textit{messages.txt}, it can be used as input for a custom Python script. This script was written in order to visualise the tree of execution paths graphically, which is great help with understanding path forking behaviour.
+Figure \ref{} shows the root\todo{?} of the tree of execution paths of \app.
+Each box represents an execution state, lines pointing to another state symbolise a fork of the execution state.
+The hex number at the origin of each edge is the memory address in which the state was forked.
+Edges are labelled with all constraints that have to be respected in the corresponding execution state.
+Blue paths indicate one connection to the internet so far, yellow two and red three.
+The text below each leaf shows the output of the \textit{TestCaseGenerator} plugin for this execution path.
 
 
 \iffalse
