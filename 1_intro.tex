@@ -29,13 +29,24 @@ This technique can for example prove the non-existence of critical corner cases 
 
 3.) Working directly on \textit{binaries} further increases the degree of realism in system analyses, as it allows to include closed source modules into the investigation.
 
-What I do is bla...
-...justify the choice of \sse as platform for system analysis.
+\bigskip
+
+As an exemplary showcase for the power of the \sse platform and its underlying concepts this paper will perform a thorough analysis of a binary file in user mode.
+The scenario assumes that this program was found somewhere in the internet and claims to be a useful freeware tool.
+\sse shall help to investigate whether the binary compromises the user's privacy, for instance by leaking private data to the internet.
 
 
+%What I do is bla...
+%...justify the choice of \sse as platform for system analysis.\todo{?}
 
-Chapter \ref{sec:s2e} explains...,
-then bla, then bla
+\bigskip
+
+Chapter \ref{sec:s2e} explains the theoretical concepts of selective symbolic execution.
+Chapter \ref{sec:platform} then introduces \sse, the platform which builds upon all techniques described before.
+Coming to the practical part, chapter \ref{sec:proj} lays out the concrete analysis scenario and formulates research questions.
+Chapter \ref{sec:impl} describes how \sse can be applied in this scenario, followed by an explanation of \sse results in chapter \ref{sec:ana}.
+Possible further research related to this topic is mentioned in chapter \ref{sec:outlook}, together with some selected related work in chapter \ref{sec:rel_work}.
+Finally, chapter \ref{sec:conclusion} summarises and concludes this paper.
 
 %\newpage
 \iffalse
