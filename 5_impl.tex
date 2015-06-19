@@ -25,6 +25,34 @@ As path search strategy this analysis uses a depth first search.
 Most logic in the \textbf{analysis part} relies on \sse's \textit{Annotations} plugin.
 It allows fine monitoring and even fiddling with the execution state by annotating single instructions or functions in the program binary.
 
+For the scenario in this paper all instructions which handle connections to the internet are of particular interest.
+The C library call \textit{connect} helps to identify where the program is connecting to, and the corresponding \textit{write} and \textit{read} calls allow to find out what data is sent and received in this connection.
+Memory addresses of these relevant calls can be retrieved from the assembly code.
+Since all calls concerned with connecting to the internet seem to take place in a single function named \textit{send\_data}, calls to this function as a whole shall be monitored, too.
+
+After providing \sse's \textit{Annotations} plugin with all relevant memory addresses plus a little more configuration, we can now execute code every time the program runs into one of the interesting instructions.
+At this point, we will \ldots
+
+1.) log that instruction $X$ was reached.
+Together with other \sse output this information shows which execution paths run into the \textit{send\_data} method and when they do so.
+
+2.) save information about the executed instruction in the current plugin state.
+This allows to check whether there have been prior connections to the internet when the program runs into the next annotated instruction.
+
+3.) read out parameters of the called function.
+The function \textit{send\_data}, for instance, is called with one parameter, which appears to be a memory location.
+Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
+
+4.) read (or write) registers (EAX, ESP, ...).
+...
+
+5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
+...
+
+
+Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
+
+
 
 
 \iffalse
