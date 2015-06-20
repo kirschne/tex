@@ -1,6 +1,6 @@
 \section{Implementation}\label{sec:impl}
 
-\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste.\todo{.}
+\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste. Beschreiben, dass alles in Lua gecodet wird. Note: x86\todo{.}
 
 As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
 
@@ -13,7 +13,7 @@ The next step is to precisely specify which variables shall be treated symbolica
 In general, as a start we want to make all user inputs symbolic.
 For a closed source binary this can be done in several ways.
 A command line tool can be called from a wrapper program which hands over symbolic arguments instead of concrete ones.
-If user input is entered in a UI, a further code into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.\todo{..}
+If user input is entered in a UI, a further look into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.\todo{..}
 %look for ... calls...
 \sse can intercept execution of the specified memory addresses and replace them with symbolic values (state:writeMemorySymb(\ldots)).\todo{con?}
 % consistency models?????
@@ -31,27 +31,11 @@ For the scenario in this paper all instructions which handle connections to the 
 The C library call \textit{connect} helps to identify where the program is connecting to, and the corresponding \textit{write} and \textit{read} calls allow to find out what data is sent and received in this connection.
 Memory addresses of these relevant calls can be retrieved from the assembly code.
 Since all calls concerned with connecting to the internet seem to take place in a single function named \textit{send\_data}, calls to this function as a whole shall be monitored, too.
+Listing \ref{lst:ass} shows relevant parts of the function \textit{send\_data} in assembly code.
+%, together with comments...
 
-After providing \sse's \textit{Annotations} plugin with all relevant memory addresses plus a little more configuration, we can now execute code every time the program runs into one of the interesting instructions.
-At this point, we will \ldots
 
-1.) log that instruction $X$ was reached.
-Together with other \sse output this information shows which execution paths run into the \textit{send\_data} method and when they do so.
-
-2.) save information about the executed instruction in the current plugin state.
-This allows to check whether there have been prior connections to the internet when the program runs into the next annotated instruction.
-
-3.) read out parameters of the called function.
-The function \textit{send\_data}, for instance, is called with one parameter, which appears to be a memory location.
-Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
-
-4.) read (or write) registers (EAX, ESP, ...).
-... Check out call conventions of write, ...
-%This may either be used to check the current internal state, or...
-
-5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
-... Nice for controlling consistency models. Not used currently.
-
+\bigskip
 % -------------------------------------------------------------------
 \begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Configuration of the \textit{Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions.}, label={lst:ann_def}]
 pluginsConfig.Annotation = {
@@ -82,8 +66,50 @@ pluginsConfig.Annotation = {
 \end{lstlisting}
 
 
+
+After providing \sse's \textit{Annotations} plugin with all relevant memory addresses plus a little more configuration (shown in listing \ref{lst:ann_def}), we can now execute code every time the program runs into one of the interesting instructions.
+At this point, we will \ldots
+
+1.) log that instruction $X$ was reached.
+Together with other \sse output this information shows which execution paths run into the \textit{send\_data} method and when they do so.
+
+2.) save information about the executed instruction in the current plugin state.
+This allows to check whether there have been prior connections to the internet when the program runs into the next annotated instruction.
+
+3.) read out parameters of the called function.
+The function \textit{send\_data}, for instance, is called with one parameter, which appears to be a memory location.
+Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
+
+4.) read (or write) registers (EAX, ESP, ...).
+... Check out call conventions of write, ...
+%This may either be used to check the current internal state, or...
+
+5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
+... Nice for controlling consistency models. Not used currently.
+
+\bigskip
+
+Listing \ref{lst:send_data}, for instance, shows the Lua function which is triggered on every execution of the assembly function \textit{send\_data} (see listing \ref{lst:ann_def} for the registration of this function and its coupling to a specific memory address).
+Because \textit{send\_data} was registered as a function call in listing \ref{lst:ann_def}, \sse's interfaces facilitate the extraction of all parameters via \textit{state:readParameter()}.
+A sample test run shows that $arg0$ is clearly a memory address, so the next step must be to examinate what data is stored at this location.
+The method \textit{print\_mem} does just that and additionally brings the contents into a human-readable format.
+Then the Lua script stores information that this function was called in the current execution state.
+Doing so, the next call will notice that the method has been executed before, increment the counter and write this fact into a log file.
+
+The $else$ branch will be called when the function returns.
+Following common calling conventions, we expect return values to be transmitted via the register $EAX$ (and $EDX$ if bigger than four bytes), hence $EAX$ could also hold interesting information.
+Unfortunately, this does not seem to be the case as $EAX$ is always $0$ except in some error cases.
+So \textit{send\_data} is probably just returning a status integer value.
+
+
+
+
+
+
+
+\bigskip
 % -------------------------------------------------------------------
-\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Lua function executed upon every call of the function send_data().}, label={lst:send_data}]
+\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Lua function executed upon every call of the function send\_data().}, label={lst:send_data}]
 function call_ann (state, curPlgState)
   if curPlgState:isCall() then
     arg0 = state:readParameter(0);
