@@ -52,6 +52,59 @@ Now \sse's analysis interfaces can be employed to dynamically find out what is w
 5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
 ... Nice for controlling consistency models. Not used currently.
 
+% -------------------------------------------------------------------
+\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Configuration of the \textit{Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions.}, label={lst:ann_def}]
+pluginsConfig.Annotation = {
+  annotation_write = {
+    active=true,
+    module="prog",
+    address=0x8049523, -- write()
+    instructionAnnotation="do_write",
+    beforeInstruction=true,
+    switchInstructionToSymbolic=false
+  },
+  annotation_read = {
+    active=true,
+    module="prog",
+    address=0x804956b, -- read()
+    instructionAnnotation="do_read",
+    beforeInstruction=false, 
+    switchInstructionToSymbolic=false
+  },
+  annotation_send_data = {
+    active=true,
+    module="prog",
+    address=0x804940c, -- send_data()
+    callAnnotation="call_ann",
+    paramcount = 1
+  }
+}
+\end{lstlisting}
+
+
+% -------------------------------------------------------------------
+\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Lua function executed upon every call of the function send_data().}, label={lst:send_data}]
+function call_ann (state, curPlgState)
+  if curPlgState:isCall() then
+    arg0 = state:readParameter(0);
+    print ("Calling function with with arg0=" .. ("%x"):format(arg0));
+    -- print_mem dereferences the pointer arg0 and converts the memory behind that address into a string.
+    print_mem(state, curPlgState, arg0);
+    -- saving info about the no. of connections in this state so far
+    local no =curPlgState:getValue("no");
+    if no == nil then
+      no = 0
+    end
+    no = no + 1;
+    curPlgState:setValue("no", no);
+    print ("\n\tNo. of connections on this path so far: " .. no);
+  else
+    -- Called when the function send_data returns. The return value can be read from the EAX register.
+    local eax =state:readRegister("eax");
+    print("EAX: " .. ("%x"):format(eax));
+  end
+end
+\end{lstlisting}
 
 Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
 
