@@ -9,7 +9,7 @@ digraph Tree {
 		}
 		subgraph cluster_0 {
 			graph [color=black label="state 0" shape=box]
-				"80498e6" [label="0x80498e6"]
+				"80498e6" [label="0x80498e6\nin main()"]
 		}
 		subgraph cluster_346 {
 			graph [color=black label="state 346" shape=box]
@@ -437,8 +437,8 @@ digraph Tree {
 		}
 		subgraph cluster_1 {
 			graph [color=black label="state 1" shape=box]
-				"80498ef" [label="0x80498ef"]
-				"80498f7" [label="0x80498f7"]
+				"80498ef" [label="0x80498ef\nin main()"]
+				"80498f7" [label="0x80498f7\nin main()"]
 		}
 		subgraph cluster_146 {
 			graph [color=black label="state 146" shape=box]
@@ -743,7 +743,7 @@ digraph Tree {
 		}
 		subgraph cluster_7 {
 			graph [color=black label="state 7" shape=box]
-				8049395 [label="0x8049395"]
+				8049395 [label="0x8049395\nin calc_tax()"]
 		}
 		subgraph cluster_170 {
 			graph [color=black label="state 170" shape=box]
@@ -957,7 +957,7 @@ digraph Tree {
 		subgraph cluster_12 {
 			graph [color=black label="state 12" shape=box]
 				8049933 [label="0x8049933"]
-				"804993c" [label="0x804993c"]
+				"804993c" [label="0x804993c\nin main()"]
 				b74a0e7 [label="0xb74a0e7"]
 				b749cdc [label="0xb749cdc"]
 				b749cdc [label="0xb749cdc"]
@@ -1184,7 +1184,7 @@ digraph Tree {
 		}
 		subgraph cluster_8 {
 			graph [color=black label="state 8" shape=box]
-				"804939f" [label="0x804939f"]
+				"804939f" [label="0x804939f\nin calc_tax()"]
 		}
 		subgraph cluster_548 {
 			graph [color=black label="state 548" shape=box]
@@ -1306,7 +1306,7 @@ digraph Tree {
 		}
 		subgraph cluster_3 {
 			graph [color=black label="state 3" shape=box]
-				"80492b7" [label="0x80492b7"]
+				"80492b7" [label="0x80492b7\nin calc_tax()"]
 		}
 		subgraph cluster_368 {
 			graph [color=black label="state 368" shape=box]
@@ -1548,8 +1548,8 @@ digraph Tree {
 		}
 		subgraph cluster_9 {
 			graph [color=black label="state 9" shape=box]
-				"80493d5" [label="0x80493d5"]
-				"80493df" [label="0x80493df"]
+				"80493d5" [label="0x80493d5\nin calc_tax()"]
+				"80493df" [label="0x80493df\nin calc_tax()"]
 		}
 		subgraph cluster_896 {
 			graph [color=black label="state 896" shape=box]
@@ -1627,26 +1627,13 @@ digraph Tree {
 		}
 		subgraph cluster_4 {
 			graph [color=black label="state 4" shape=box]
-				"80492cd" [label="0x80492cd"]
-				8049334 [label="0x8049334"]
-				8049381 [label="0x8049381"]
-				"80493cb" [label="0x80493cb"]
-				8049933 [label="0x8049933"]
-				b74a0e7 [label="0xb74a0e7"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
-				b749cdc [label="0xb749cdc"]
+				"80492cd" [label="0x80492cd\nin calc_tax()"]
+				8049334 [label="0x8049334\nin calc_tax()"]
+				8049381 [label="0x8049381\nin calc_tax()"]
+				"80493cb" [label="0x80493cb\nin calc_tax()"]
+				8049933 [label="0x8049933\nin main()"]
+				b74a0e7 [label="0xb74a0e7\nin libc-2.13.so"]
+				b749cdc [label="0xb749cdc\nin libc-2.13.so"]
 		}
 		subgraph cluster_280 {
 			graph [color=black label="state 280" shape=box]
@@ -5500,7 +5487,7 @@ digraph Tree {
 			b749cdc -> cluster_983 [label="" lhead=cluster_983]
 		tcg17 [label="TestCaseGenerator
          v0_income_0: 00 00 00 01, (int32_t) 16777216
-         v1_taxcat_1: 06 00 00 00, (int32_t) 6"]
+         v1_taxcat_1: 04 00 00 00, (int32_t) 4"]
 			8049933 -> tcg17 [ltail=cluster_17]
 		tcg1 [label="TestCaseGenerator
          v0_income_0: 00 01 00 00, (int32_t) 256
@@ -5520,7 +5507,7 @@ digraph Tree {
 			"804939f" -> tcg7 [ltail=cluster_7]
 		tcg9 [label="TestCaseGenerator
          v0_income_0: 00 00 00 01, (int32_t) 16777216
-         v1_taxcat_1: 02 00 00 00, (int32_t) 2"]
+         v1_taxcat_1: 01 00 00 00, (int32_t) 1"]
 			"80493d5" -> tcg9 [ltail=cluster_9]
 		tcg8 [label="TestCaseGenerator
          v0_income_0: 00 00 01 00, (int32_t) 65536
