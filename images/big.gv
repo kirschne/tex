@@ -1,0 +1,234 @@
+digraph Tree {
+	graph [compound=true shape=box]
+	node [shape=none]
+	edge [arrowhead=none]
+		subgraph cluster_1 {
+			graph [color=black label="state 1" shape=box]
+				"80498ea" [label="0x80498ea"]
+				"80498f3" [label="0x80498f3"]
+		}
+		subgraph cluster_0 {
+			graph [color=black label="state 0" shape=box]
+				"80498e1" [label="0x80498e1"]
+		}
+		subgraph cluster_3 {
+			graph [color=black label="state 3" shape=box]
+				"80492b7" [label="0x80492b7"]
+		}
+		subgraph cluster_4 {
+			graph [color=orange label="state 4" shape=box]
+				"80492cd" [label="0x80492cd"]
+				8049334 [label="0x8049334"]
+				8049381 [label="0x8049381"]
+				"80493c5" [label="0x80493c5"]
+				8049930 [label="0x8049930"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7515e7 [label="0xb7515e7"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+				b7511dc [label="0xb7511dc"]
+		}
+			"80498e1" -> "80498ea" [label="" lhead=cluster_1]
+		subgraph cluster_2 {
+			graph [color=black label="state 2" shape=box]
+				cluster_2 [label=" "]
+		}
+			"80498ea" -> cluster_2 [label="" lhead=cluster_2]
+			"80498f3" -> "80492b7" [label="" lhead=cluster_3]
+			"80492b7" -> "80492cd" [label="" lhead=cluster_4]
+		subgraph cluster_5 {
+			graph [color=black label="state 5" shape=box]
+				cluster_5 [label=" "]
+		}
+			"80492cd" -> cluster_5 [label="" lhead=cluster_5]
+		subgraph cluster_6 {
+			graph [color=black label="state 6" shape=box]
+				cluster_6 [label=" "]
+		}
+			8049334 -> cluster_6 [label="" lhead=cluster_6]
+		subgraph cluster_7 {
+			graph [color=black label="state 7" shape=box]
+				cluster_7 [label=" "]
+		}
+			8049381 -> cluster_7 [label="" lhead=cluster_7]
+		subgraph cluster_8 {
+			graph [color=black label="state 8" shape=box]
+				cluster_8 [label=" "]
+		}
+			"80493c5" -> cluster_8 [label="" lhead=cluster_8]
+		subgraph cluster_9 {
+			graph [color=black label="state 9" shape=box]
+				cluster_9 [label=" "]
+		}
+			8049930 -> cluster_9 [label="" lhead=cluster_9]
+		subgraph cluster_10 {
+			graph [color=black label="state 10" shape=box]
+				cluster_10 [label=" "]
+		}
+			b7511dc -> cluster_10 [label="" lhead=cluster_10]
+		subgraph cluster_11 {
+			graph [color=black label="state 11" shape=box]
+				cluster_11 [label=" "]
+		}
+			b7511dc -> cluster_11 [label="" lhead=cluster_11]
+		subgraph cluster_12 {
+			graph [color=black label="state 12" shape=box]
+				cluster_12 [label=" "]
+		}
+			b7515e7 -> cluster_12 [label="" lhead=cluster_12]
+		subgraph cluster_10 {
+			graph [color=black label="state 10" shape=box]
+				cluster_10 [label=" "]
+		}
+			b7511dc -> cluster_10 [label="" lhead=cluster_10]
+		subgraph cluster_11 {
+			graph [color=black label="state 11" shape=box]
+				cluster_11 [label=" "]
+		}
+			b7511dc -> cluster_11 [label="" lhead=cluster_11]
+		subgraph cluster_10 {
+			graph [color=black label="state 10" shape=box]
+				cluster_10 [label=" "]
+		}
+			b7511dc -> cluster_10 [label="" lhead=cluster_10]
+		subgraph cluster_16 {
+			graph [color=black label="state 16" shape=box]
+				cluster_16 [label=" "]
+		}
+			b7511dc -> cluster_16 [label="" lhead=cluster_16]
+		subgraph cluster_17 {
+			graph [color=black label="state 17" shape=box]
+				cluster_17 [label=" "]
+		}
+			b7511dc -> cluster_17 [label="" lhead=cluster_17]
+		subgraph cluster_16 {
+			graph [color=black label="state 16" shape=box]
+				cluster_16 [label=" "]
+		}
+			b7511dc -> cluster_16 [label="" lhead=cluster_16]
+		subgraph cluster_17 {
+			graph [color=black label="state 17" shape=box]
+				cluster_17 [label=" "]
+		}
+			b7511dc -> cluster_17 [label="" lhead=cluster_17]
+		subgraph cluster_16 {
+			graph [color=black label="state 16" shape=box]
+				cluster_16 [label=" "]
+		}
+			b7511dc -> cluster_16 [label="" lhead=cluster_16]
+		subgraph cluster_17 {
+			graph [color=black label="state 17" shape=box]
+				cluster_17 [label=" "]
+		}
+			b7511dc -> cluster_17 [label="" lhead=cluster_17]
+		subgraph cluster_16 {
+			graph [color=black label="state 16" shape=box]
+				cluster_16 [label=" "]
+		}
+			b7511dc -> cluster_16 [label="" lhead=cluster_16]
+		subgraph cluster_17 {
+			graph [color=black label="state 17" shape=box]
+				cluster_17 [label=" "]
+		}
+			b7511dc -> cluster_17 [label="" lhead=cluster_17]
+		subgraph cluster_16 {
+			graph [color=black label="state 16" shape=box]
+				cluster_16 [label=" "]
+		}
+			b7511dc -> cluster_16 [label="" lhead=cluster_16]
+		subgraph cluster_26 {
+			graph [color=black label="state 26" shape=box]
+				cluster_26 [label=" "]
+		}
+			b7511dc -> cluster_26 [label="" lhead=cluster_26]
+		subgraph cluster_26 {
+			graph [color=black label="state 26" shape=box]
+				cluster_26 [label=" "]
+		}
+			b7511dc -> cluster_26 [label="" lhead=cluster_26]
+		subgraph cluster_38 {
+			graph [color=black label="state 38" shape=box]
+				cluster_38 [label=" "]
+		}
+			b7511dc -> cluster_38 [label="" lhead=cluster_38]
+		subgraph cluster_42 {
+			graph [color=black label="state 42" shape=box]
+				cluster_42 [label=" "]
+		}
+			b7511dc -> cluster_42 [label="" lhead=cluster_42]
+		subgraph cluster_42 {
+			graph [color=black label="state 42" shape=box]
+				cluster_42 [label=" "]
+		}
+			b7511dc -> cluster_42 [label="" lhead=cluster_42]
+		tcg43 [label="TestCaseGenerator
+         v0_income_0: 00 ab 90 42, (int32_t) 1116777216, (string) \"...B\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg43 [ltail=cluster_43]
+		tcg48 [label="TestCaseGenerator
+         v0_income_0: 00 4e 72 54, (int32_t) 1416777216, (string) \".NrT\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg48 [ltail=cluster_48]
+		tcg33 [label="TestCaseGenerator
+         v0_income_0: 00 d2 49 6c, (int32_t) 1816777216, (string) \"..Il\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg33 [ltail=cluster_33]
+		tcg37 [label="TestCaseGenerator
+         v0_income_0: 00 75 2b 7e, (int32_t) 2116777216, (string) \".u+~\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg37 [ltail=cluster_37]
+		tcg30 [label="TestCaseGenerator
+         v0_income_0: 00 2f 68 5a, (int32_t) 1516777216, (string) \"./hZ\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg30 [ltail=cluster_30]
+		tcg28 [label="TestCaseGenerator
+         v0_income_0: 00 65 cd 1e, (int32_t) 516777216, (string) \".e..\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg28 [ltail=cluster_28]
+		tcg29 [label="TestCaseGenerator
+         v0_income_0: 00 e9 a4 36, (int32_t) 916777216, (string) \"...6\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg29 [ltail=cluster_29]
+		tcg34 [label="TestCaseGenerator
+         v0_income_0: 00 b3 3f 72, (int32_t) 1916777216, (string) \"..?r\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg34 [ltail=cluster_34]
+		tcg1 [label="TestCaseGenerator
+         v0_income_0: 00 00 00 01, (int32_t) 16777216, (string) \"....\"
+         v1_taxcat_1: 00, (string) \".\""]
+			"80498ea" -> tcg1 [ltail=cluster_1]
+		tcg0 [label="TestCaseGenerator
+         v0_income_0: 00 00 00 00, (int32_t) 0, (string) \"....\"
+         v1_taxcat_1: 00, (string) \".\""]
+			"80498e1" -> tcg0 [ltail=cluster_0]
+		tcg3 [label="TestCaseGenerator
+         v0_income_0: 00 01 00 00, (int32_t) 256, (string) \"....\"
+         v1_taxcat_1: 01, (string) \".\""]
+			"80492b7" -> tcg3 [ltail=cluster_3]
+		tcg4 [label="TestCaseGenerator
+         v0_income_0: 00 00 00 01, (int32_t) 16777216, (string) \"....\"
+         v1_taxcat_1: 01, (string) \".\""]
+			"80492cd" -> tcg4 [ltail=cluster_4]
+		tcg47 [label="TestCaseGenerator
+         v0_income_0: 00 c2 eb 0c, (int32_t) 216777216, (string) \"....\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg47 [ltail=cluster_47]
+		tcg41 [label="TestCaseGenerator
+         v0_income_0: 00 84 d7 18, (int32_t) 416777216, (string) \"....\"
+         v1_taxcat_1: 01, (string) \".\""]
+			b7511dc -> tcg41 [ltail=cluster_41]
+}

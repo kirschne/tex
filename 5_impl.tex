@@ -1,6 +1,9 @@
 \section{Implementation}\label{sec:impl}
 
-\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste. Beschreiben, dass alles in Lua gecodet wird. Note: x86\todo{.}
+\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste. Beschreiben, dass alles in Lua gecodet wird. Note: x86
+General notes: before execution in \sse the sample application \app was highly optimised.
+Blabla
+\todo{.}
 
 As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
 
@@ -68,10 +71,11 @@ Since all calls concerned with connecting to the internet seem to take place in 
 Listing \ref{lst:ass} shows relevant parts of the function \textit{send\_data} in assembly code.
 %, together with comments...
 
+Verbindung\todo{?}
 
 \bigskip
 % -------------------------------------------------------------------
-\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Configuration of the \textit{Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions.}, label={lst:ann_def}]
+\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Configuration of the \textit{Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions. Note the link to the binary in listing \ref{lst:ass} via memory addresses.}, label={lst:ann_def}]
 pluginsConfig.Annotation = {
   annotation_write = {
     active=true,
@@ -114,12 +118,13 @@ This allows to check whether there have been prior connections to the internet w
 The function \textit{send\_data}, for instance, is called with one parameter, which appears to be a memory location.
 Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
 
-4.) read (or write) registers (EAX, ESP, ...).
-... Check out call conventions of write, ...
+4.) read (or write) registers ($EAX$, $EBP$, ...).
+Thus \sse users can check and even manipulate the current execution state, similar to debug situations.
+%... Check out call conventions of write, ...
 %This may either be used to check the current internal state, or...
 
 5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
-... Nice for controlling consistency models. Not used currently.
+... Nice for controlling consistency models. Not used currently.\todo{.}
 
 \bigskip
 
@@ -143,7 +148,7 @@ So \textit{send\_data} is probably just returning a status integer value.
 
 \bigskip
 % -------------------------------------------------------------------
-\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Lua function executed upon every call of the function send\_data().}, label={lst:send_data}]
+\begin{lstlisting}[language={[5.0]Lua}, basicstyle=\ttfamily\footnotesize, caption={Lua function executed upon every call of the function send\_data(). See lines 18 - 24 in listing \ref{lst:ann_def} for the registration of \textit{call\_ann}.}, label={lst:send_data}]
 function call_ann (state, curPlgState)
   if curPlgState:isCall() then
     arg0 = state:readParameter(0);
@@ -167,13 +172,18 @@ end
 \end{lstlisting}
 \bigskip
 
-Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
+%Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
 
 \bigskip
 
 In addition to the \textit{Annotations} plugin, analysis in this paper also employs the \textit{TestCaseGenerator}.
 For each execution path, it finds concrete inputs for all symbolic variables.
 Those will be printed upon termination of the path and, apart from helping to understand the program, may serve as input for further testing.
+
+\bigskip
+
+Naturally, an important step for understanding symbolic execution of \app is to log and later interpret output of KLEE, the symbolic execution engine used in \sse.
+The behaviour of KLEE can also be controlled via \sse's Lua configuration file.
 
 
 
