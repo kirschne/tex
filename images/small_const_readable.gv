@@ -42,140 +42,80 @@ digraph Tree {
 				b7511dc [label="0xb7511dc"]
 				b7511dc [label="0xb7511dc"]
 		}
-			"80498e1" -> "80498ea" [label="(Eq (w32 0x0)
-(And w32 (Or w32 (LShr w32 (Or w32 (LShr w32 (Concat w32 N0:(Read w8 0x3 v0_income_0) (w24 0x0))
-(w32 0x18))
-N1:(ZExt w32 (Read w8 (Extract w32 0 (And w64 (ZExt w64 (Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) N2:(Read w8 0x0 v0_income_0)))))
-(w64 0xff)))
-const_arr1)))
-(w32 0x7))
-(LShr w32 (Or w32 N1
-(Shl w32 (ZExt w32 (Eq (w32 0x0)
-(ReadLSB w32 0x0 v0_income_0)))
-(w32 0x6)))
-(w32 0x6)))
-(w32 0x1))" lhead=cluster_1]
+			"80498e1" -> "80498ea" [label="income != 0" lhead=cluster_1]
 		subgraph cluster_2 {
 			graph [color=black label="state 2" shape=box]
 				cluster_2 [label=" "]
 		}
-			"80498ea" -> cluster_2 [label="taxcat < 6" lhead=cluster_2]
+			"80498ea" -> cluster_2 [label="taxcat > 6" lhead=cluster_2]
 			"80498f3" -> "80492b7" [label="taxcat != 0" lhead=cluster_3]
 			"80492b7" -> "80492cd" [label="income < 8353" lhead=cluster_4]
 		subgraph cluster_5 {
 			graph [color=black label="state 5" shape=box]
 				cluster_5 [label=" "]
 		}
-			"80492cd" -> cluster_5 [label="income >= 13468" lhead=cluster_5]
+			"80492cd" -> cluster_5 [label="income < 13468" lhead=cluster_5]
 		subgraph cluster_6 {
 			graph [color=black label="state 6" shape=box]
 				cluster_6 [label=" "]
 		}
-			8049334 -> cluster_6 [label="income >= 52880" lhead=cluster_6]
+			8049334 -> cluster_6 [label="income < 52880" lhead=cluster_6]
 		subgraph cluster_7 {
 			graph [color=black label="state 7" shape=box]
 				cluster_7 [label=" "]
 		}
-			8049381 -> cluster_7 [label="income >= 250729" lhead=cluster_7]
+			8049381 -> cluster_7 [label="income < 250729" lhead=cluster_7]
 		subgraph cluster_8 {
 			graph [color=black label="state 8" shape=box]
 				cluster_8 [label=" "]
 		}
-			"80493c5" -> cluster_8 [label="(Not (Eq (w32 0x0)
-(And w32 (Add w32 (w32 0xffffffff)
-(ZExt w32 (Read w8 0x0 v1_taxcat_1)))
-(w32 0xff))) taxcat != 0 \n&& " lhead=cluster_8]
+			"80493c5" -> cluster_8 [label="taxcat != 1" lhead=cluster_8]
 		subgraph cluster_9 {
 			graph [color=black label="state 9" shape=box]
 				cluster_9 [label=" "]
 		}
-			8049930 -> cluster_9 [label="taxcat != 0 \n&& ...(Not (Eq (w32 0x0)
-(And w32 (Add w32 (w32 0xffffffff)
-(ZExt w32 (Read w8 0x0 v1_taxcat_1)))
-(w32 0xff)))" lhead=cluster_9]
+			8049930 -> cluster_9 [label="taxcat != 1" lhead=cluster_9]
 		subgraph cluster_10 {
 			graph [color=black label="state 10" shape=box]
 				cluster_10 [label=" "]
 		}
-			b7511dc -> cluster_10 [label="taxcat != 1 \n&& 
-(Not (Eq (w32 0x1)
-(Sub w32 N0:(Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) (Read w8 0x0 v1_taxcat_1))))
-(Shl w32 (Add w32 (Extract w32 0 (Shl w64 N1:(LShr w64 (Mul w64 (w64 0xcccccccd) (ZExt w64 N0))
-(w64 0x23))
-(w64 0x2)))
-(Extract w32 0 N1))
-(w32 0x1))))" lhead=cluster_10]
+			b7511dc -> cluster_10 [label="taxcat != 1" lhead=cluster_10]
 		subgraph cluster_11 {
 			graph [color=black label="state 11" shape=box]
 				cluster_11 [label=" "]
 		}
-			b7511dc -> cluster_11 [label="(Not (Eq (w32 0x0)
-(Extract w32 0 (LShr w64 (Mul w64 (w64 0xcccccccd)
-(ZExt w64 (Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) (Read w8 0x0 v1_taxcat_1))))))
-(w64 0x23))))" lhead=cluster_11]
+			b7511dc -> cluster_11 [label="taxcat != 0" lhead=cluster_11]
 		subgraph cluster_12 {
 			graph [color=black label="state 12" shape=box]
 				cluster_12 [label=" "]
 		}
-			b7515e7 -> cluster_12 [label="(Not (Eq (w32 0x0)
-(LShr w32 (Concat w32 (Read w8 0x3 v0_income_0) (w24 0x0))
-(w32 0x1f)))" lhead=cluster_12]
+			b7515e7 -> cluster_12 [label="income != 0" lhead=cluster_12]
 		subgraph cluster_10 {
 			graph [color=black label="state 10" shape=box]
 				cluster_10 [label=" "]
 		}
-			b7511dc -> cluster_10 [label="(Not (Eq (w32 0x1)
-(Sub w32 N0:(Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) (Read w8 0x0 v1_taxcat_1))))
-(Shl w32 (Add w32 (Extract w32 0 (Shl w64 N1:(LShr w64 (Mul w64 (w64 0xcccccccd) (ZExt w64 N0))
-(w64 0x23))
-(w64 0x2)))
-(Extract w32 0 N1))
-(w32 0x1))))" lhead=cluster_10]
 		subgraph cluster_11 {
 			graph [color=black label="state 11" shape=box]
 				cluster_11 [label=" "]
 		}
-			b7511dc -> cluster_11 [label="(Not (Eq (w32 0x0)
-(Extract w32 0 (LShr w64 (Mul w64 (w64 0xcccccccd)
-(ZExt w64 (Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) (Read w8 0x0 v1_taxcat_1))))))
-(w64 0x23))))" lhead=cluster_11]
 		subgraph cluster_10 {
 			graph [color=black label="state 10" shape=box]
 				cluster_10 [label=" "]
 		}
-			b7511dc -> cluster_10 [label="(Not (Eq (w32 0x1)
-(Sub w32 N0:(Concat w32 (w8 0x0)
-(Concat w24 (w8 0x0)
-(Concat w16 (w8 0x0) (Read w8 0x0 v1_taxcat_1))))
-(Shl w32 (Add w32 (Extract w32 0 (Shl w64 N1:(LShr w64 (Mul w64 (w64 0xcccccccd) (ZExt w64 N0))
-(w64 0x23))
-(w64 0x2)))
-(Extract w32 0 N1))
-(w32 0x1))))" lhead=cluster_10]
 		tcg1 [label="TestCaseGenerator
-         v0_income_0: 00 00 00 01, (int32_t) 16777216, (string) \"....\"
-         v1_taxcat_1: 00, (string) \".\""]
+         v0_income_0: 00 00 00 01, (int32_t) 16777216
+         v1_taxcat_1: 00"]
 			"80498ea" -> tcg1 [ltail=cluster_1]
 		tcg0 [label="TestCaseGenerator
-         v0_income_0: 00 00 00 00, (int32_t) 0, (string) \"....\"
-         v1_taxcat_1: 00, (string) \".\""]
+         v0_income_0: 00 00 00 00, (int32_t) 0
+         v1_taxcat_1: 00"]
 			"80498e1" -> tcg0 [ltail=cluster_0]
 		tcg3 [label="TestCaseGenerator
-         v0_income_0: 00 01 00 00, (int32_t) 256, (string) \"....\"
-         v1_taxcat_1: 01, (string) \".\""]
+         v0_income_0: 00 01 00 00, (int32_t) 256
+         v1_taxcat_1: 01"]
 			"80492b7" -> tcg3 [ltail=cluster_3]
 		tcg4 [label="TestCaseGenerator
-         v0_income_0: 00 00 00 01, (int32_t) 16777216, (string) \"....\"
-         v1_taxcat_1: 01, (string) \".\""]
+         v0_income_0: 00 00 00 01, (int32_t) 16777216
+         v1_taxcat_1: 01"]
 			"80492cd" -> tcg4 [ltail=cluster_4]
 }
