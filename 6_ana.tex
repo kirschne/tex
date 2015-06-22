@@ -41,37 +41,92 @@ Many forks originate in this method and both symbolic variables play a role in i
 Important in this case means `important with respect to being relevant to the symbolic execution of the two focal variables $income$ and $taxcat$'.
 Paths with the constraints $[income < 13468]$ and $[income < 52880]$ seem to be less important since they are leaves in the tree.
 The two paths $[52880 \le income < 250729]$ and $[income \ge 25729]$, however, entail further checks of $taxcat$, the other symbolic variable.
-Summarising the general findings so far, \app checks the user's income and tax category and takes special actions if the income is higher than 52880 Euro.
+Summarising the general findings so far, \app checks the user's income and tax category and takes special actions if the income is higher than 52880 euros.
 
 Unfortunately, due to the problem with incomplete test results (described at the end of this chapter), the tree in figure \ref{fig:tree} does not show all execution states.
 While many states (900+) were manually left out due to insignificance, many more states are missing in \sse's output despite potentially being relevant.
 For example, we cannot say what happens if $income$ is below or equal 8353 (the complementary event of the switch from state 3 to state 4).
 
+\begin{figure*}
+\includegraphics[width=\textwidth]{cool4}
+\caption{Tree visualisation for understanding path forking behaviour in the analysis of \app. Shows at which memory addresses \sse forked new execution states. Path constraints are printed at each state transition. For most states, the \textit{TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$. Blue dots symbolise that in this state a ``donation'' message was transferred to a server. Red dots mark states which leak the complete set of user inputs.}
+\label{fig:tree}
+\end{figure*}
+
 \medskip
 
 After this general inspection of \app's behaviour, we can finally shift the focus towards the research objectives regarding privacy issues.
- 
+As described in the previous chapter, \sse was programmed to monitor all instructions related to connections to the internet.
+Output of these inspection activities have to be extracted from the \sse's main log file.
+%Viewing those custom logs in the context of all other important \sse messages facilitates the interpretation of connections in the
+Based on the output resulting from annotating the function \textit{send\_data}, which includes reading out the parameter the method is called with (see listing \ref{lst:send_data}), messages sent to the internet can be classified into three categories:
+\begin{enumerate}
+\item A command ``load\_ad'', which leads to a server response containing an advertisement for the user.
+\item A command ``donate'', which entails a static message from the server prompting the user to donate to the poor programmer. Output messages $1.)$ and $2.)$ do not contain any further data apart from the command.
+\item A message depending on both symbolic variables $income$ and $taxcat$.
+It always starts with the keyword ``found\_hit'', followed by all data the user has entered.
+Message fields are separated by a colon and stick to the order `user name', `birth date', `income' and `tax category'. Example: ``found\_hit:name:1.1.77:16777216:1''.
+Response from the server is a static status message.
+\end{enumerate}
+
+While message type $1.)$ could be expected (\app informed us that it shows advertisements), calls for donation (type $2.)$) were not announced before.
+Still, since ``donate'' messages here do not contain any user-specific data, at this point of the analysis they can be considered innocuous with regard to privacy issues.
+
+Internet connections of type $3.)$, however, undoubtedly impair the user's privacy.
+They send the whole set of confidential user data to a server in the internet.
+Hence a clear answer to research question three is: yes, \app does leak personal data of the user!
+
+Note that even if \app would try to disguise its actions by encrypting the data it sends to the server, \sse would still find out which symbolic variables the encrypted message depends on.
+Thus it should be possible to find out what data is sent even without thorough analysis of the encryption mechanisms.
+
+\medskip
+
+Now that all different connections to the internet are unveiled, we want to take advantage of \sse's ability to pursue all possible execution paths and find out in which cases \app connects to the internet.
+
+For this purpose the execution tree in figure \ref{fig:tree} was enriched with the information in which execution state which connections to the internet took place.
+
+Blue dots in the graph mark that this state triggered a donation call (message of type $2.)$).
+A look at path constraints in these states tells that the common criteria here must be an $income$ either between 52880 and 250729 or even above 250729 euros.
+Apparently the programmer assumed wealthy people to be more generous than those with a low income.
+Despite the fact that these type $2.)$ calls do not transfer any user data to the server, they may potentially be a delicate matter since merely triggering them implicitly reveals information about the current user's income to the server.
+
+Red dots in the tree visualise a message leaking data in this state (message type $3.)$).
+Since all affected states originate at the fork in memory address $0x80493cb$, one condition for type $3.)$ connections must be an $income$ above 250729 euros.
+Results of the \textit{TestCaseGenerator} plugin for the states 9 an 17 confirm this observation.
+Additionally, path constraints require $taxcat$ to be either 1 or 4 in order to trigger this type of connection.
+Obviously the evil programmer of \app is only interested in data of users with a very high income and tax category one or four.
+
+The advertisement was loaded in every state, so this connection was not marked in the execution tree.
+\app's source code apparently triggers the call for an advertisement before checking anything related to the symbolic variables $income$ and $taxcat$.
 
 
+
+Since \sse eventually finds all possible execution paths of a program (if configured to do so), we can be sure that we did not miss any message type or occasion where connections are established.
+When simply debugging \app it is quite likely that we do not hit the two cases where the application leaks data and thus remain ignorant of the severe privacy problems.
 
 
 \medskip
 
-Explain!!!!!\todo{!}
+Summing up, we can now answer all research questions formulated in chapter \ref{sec:proj}:
+\begin{enumerate}
+  \item When (under which conditions) are connections to the internet established?\\
+$\Rightarrow$ \app always asks its server for an advertisement.\\
+$\Rightarrow$ Donation messages are sent whenever $[income \ge 52880]$.\\
+$\Rightarrow$ User data is transferred if $[income \ge 250729$ $\&\&$ $(taxcat == 1$ $||$ $taxcat == 4)]$.
+  \item What data is transferred in these connections?\\
+$\Rightarrow$ Type $1.)$ and type $2.)$ connections only send a short command string, while type $3.)$ messages contain all personal data the user has entered.
+  \item Does a connection to the internet leak personal data?\\
+$\Rightarrow$ Yes, in type $3.)$ communications \app reveals the user's name, his birth date, income and tax category to its server.
+\end{enumerate}
 
 
-What did I find? What not?\todo{!}
+%What did I find? What not?\todo{!}
 
 \bigskip
 
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{cool3}
-\caption{Tree visualisation for understanding path forking behaviour in the analysis of \app. Shows at which memory addresses \sse forked new execution states. Path constraints are printed at each state transition. For most states, the \textit{TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$.}
-\label{fig:tree}
-\end{figure*}
 
-Concrete test runs in \sse quickly revealed several \textbf{problems}:
+Unfortunately, concrete test runs in \sse were also accompanied with several \textbf{problems}:
 
 \medskip
 1.) Even several hours of execution did not suffice to complete the analysis process.
@@ -83,7 +138,7 @@ Probable causes of this problem are the following:
 \item Following many execution paths that are irrelevant to the analysis objectives.
 \item Execution of \sse on a ordinary laptop and not on a powerful server.
 \item Slow communication of the analysed application with a server which simultaneously ran inside the same virtual machine.
-\item Inefficient configuration of \sse. Much unnecessary debug and log output, ...
+\item Inefficient configuration of \sse: Potentially unnecessary states being forked, too much debug and log output, ...
 \end{itemize}
 The longest analysis run was terminated manually after about six hours.
 It pursued over 1000 execution states.
@@ -102,6 +157,9 @@ Keeping in mind that all \sse runs had to be terminated prematurely, conducting 
 \medskip
 4.) The problem of incomplete test results also entailed complications while constructing the execution tree, which of course never was consistent.
 For this reason and due to the fact that most states are irrelevant for the goals in this paper anyway, the tree in figure \ref{fig:tree} shows a radically trimmed version of the original execution tree.
+
+\medskip
+However, despite all these problems, the quality of analysis output in the scenario of this paper was sufficient to produce respectable and sound results. 
 
 %4.) Baum muss auch getrimmt werden, weil die allerallermeisten Forks Müll sind.
 

@@ -1,10 +1,36 @@
 \section{Outlook}\label{sec:outlook}
 
-Other cool things one could do...
+This chapter delineates a few suggestions for further interesting research topics related to the project of this paper, starting with concrete ideas for further analysis of the scenario defined in chapter \ref{sec:proj}.
 
-Apply to real malware...
+\medskip
+Due to the path explosion problems described above it would obviously be interesting to run \sse on a more powerful machine.
+This would allow a more comprehensive observation strategy, like using more symbolic variables.
+
+\medskip
+Very fine-grained scripting of \sse's configuration file or even interfering in \sse's C++ source code could handle state forking and symbolic-concrete switching more intelligently.
+Out of the box, \sse of course does not know our analysis goals and pursues every state.
+Adapting this internal behaviour to personal needs should reduce execution time and effort significantly.
+
+\medskip
+During the analysis done for this paper, the server responding to \app's messages was available as binary and always running on the guest VM.
+This is certainly a very unlikely situation when analysing real-world programs.
+The server might not be available or respond with much latency.
+It could potentially block the overload of requests triggered by our test execution, or we might not want to reveal our analysis efforts.
+
+In all of these cases symbolic execution must become independent of the server's presence.
+Besides, \app's execution tree currently does not depend on server responses.
+If the application contained switches like `\textit{if srv\_response == x then do ...}', then the consistency model applied in chapters \ref{sec:impl} and \ref{sec:ana} would fail.
+
+Such a scenario would require \sse execution to be configured for using a \textit{overapproximate consistency (RC-OC)} or \textit{control flow graph consistency (RC-CC)} model (see \cite{chip14s2e}, p.~26 ff).
+In the \app example, this would mean that responses from the server have to be intercepted and replaced with unconstrained symbolic variables.
+Practically speaking, the whole function \textit{send\_data} would have to be replaced with a symbolic variable.
+As a consequence, \sse would of course produce lots of states based on completely absurd potential server responses.
+We simply do not know how the server responds to a certain client message nor how a valid server response looks like.
+But this is the only way to make sure that \sse eventually also finds all valid server responses in the absence of any knowledge of how the server works. 
 
 
+\medskip
+%Moving away from the the concrete example program used this paper towards more general suggestions, 
 
 
 \iffalse
@@ -12,3 +38,7 @@ Apply to real malware...
 		> Was man sonst noch Tolles machen könnte.
 		> Anwendung auf echte Malware, etc…
 \fi
+
+%Other cool things one could do...
+
+%Apply to real malware...
