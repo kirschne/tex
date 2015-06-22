@@ -8,8 +8,11 @@ The exact numbers and types of output files depend on which plugins are defined 
 The most important information about \sse's general execution is accumulated in \textit{messages.txt}.
 Backbone of this file is information about all execution paths, at which memory addresses they were forked, how they are constrained, when and why they were terminated, and much more.
 %But it is also used by other plugins...
+It is also the place where we saved all custom log messages as defined in the previous chapter to.
 
-Thanks to the clear structure of \textit{messages.txt} it can be used as input for a custom Python script. This script was written in order to visualise the tree of execution paths graphically, which serves as a great help with understanding path forking behaviour.
+\medskip
+
+Thanks to the clear structure of \textit{messages.txt} it can be used as input for a custom Python script. This script was written in order to visualise the \textbf{tree of execution paths} graphically, which serves as a great help with understanding path forking behaviour.
 Figure \ref{fig:tree} shows the vital part of the tree of execution paths of \app.
 
 Each box represents an execution state, lines pointing to another state symbolise a fork of the execution state.
@@ -24,9 +27,30 @@ For simplicity all constraints were also manipulated manually and transformed in
 The text below each leaf shows the output of the \textit{TestCaseGenerator} plugin for this execution path.
 Upon termination of a state it finds concrete input examples for the two symbolic variables $income$ and $taxcat$.
 
-\bigskip
+\medskip
+
+Before coming to the actual research objectives of this paper, namely finding privacy problems, a quick interpretation of the bare tree shown in figure \ref{fig:tree} helps to gain a common understanding of \app.
+
+Program execution largely relies on two integer variables, $income$ and the tax category $taxcat$.
+Most forks in the assembly function $main()$ seem to be basic checks if these two variables contain valid data (e.g., \textit{taxcat > 6}).
+This assumption arises from the fact that many of these forks are leafs which exist only a very short time and consume hardly any memory (can be checked via the \textit{MemoryChecker} plugin).
+These paths are probably error cases that terminate the program.
+
+Important logic seems to take place in a function called \textit{calc_tax()}.
+Many forks originate in this method and both symbolic variables play a role in it.
+\todo{...}
+Unfortunately we do not know what happens if $income$ is below or equal 8353.
+This is due to the fact....
+
+
+
+
+\medskip
 
 Explain!!!!!\todo{!}
+
+
+What did I find? What not?\todo{!}
 
 \bigskip
 

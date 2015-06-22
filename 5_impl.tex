@@ -4,6 +4,7 @@
 Analysis using the \sse platform is usually done by writing a configuration script in the Lua programming language.
 As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
 
+\medskip
 In the \textbf{code selection phase} \sse is configured to focus on the program \app in user space only.
 The whole environment will be treated as a black box.
 % Possible calls into the kernel are assumed to work correctly.
@@ -103,7 +104,7 @@ pluginsConfig.Annotation = {
 
 
 After providing \sse's \textit{Annotations} plugin with all relevant memory addresses plus a little more configuration (shown in listing \ref{lst:ann_def}), we can now execute code every time the program runs into one of the interesting instructions.
-At this point, we will \ldots
+At this point we can \ldots
 
 \medskip
 1.) log that instruction $X$ was reached.

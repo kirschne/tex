@@ -71,6 +71,7 @@ Since we suspect a bug in $libFn$, we focus our analysis upon this function.
 Due to the path explosion problem, symbolically executing the entire system stack is not feasible.
 Hence only execution inside $libFn$ follows this technique.
 
+\medskip
 \textbf{Concrete} $\rightarrow$ \textbf{symbolic transition:}
 When execution enters the function $libFn$ it has to change from concrete into symbolic domain (grey areas).
 This is done by replacing concrete parameters in the method call with symbolic variables.
@@ -85,6 +86,7 @@ This is necessary in order to return a correct calculation result to $appFn$ and
 \label{fig:tree}
 \end{figure}
 
+\medskip
 \textbf{Symbolic} $\rightarrow$ \textbf{concrete transition:}
 Since the operating system is not focus of this analysis example, \sse has to switch from symbolic to concrete domain when $libFn$ calls into the kernel.
 This is done by randomly picking a concrete value which fulfils all path constraints.
@@ -106,7 +108,7 @@ The new sub-tree now picks a different concrete value for x which allows to ente
 
 % -------- Konsistenzmodelle -------- %
 
-bla bla bla
+Consistency models...\todo{!}
 
 
 
