@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,7 +1042,7 @@ LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbullet' on input line 137.
 
-[9]) (./7_outlook.tex) (./8_rel_work.tex) (./9_conclusion.tex [10])
+[9]) (./7_outlook.tex [10]) (./8_rel_work.tex) (./9_conclusion.tex)
 (./report.bbl) 
 AED: lastpage setting LastPage
 [11] (./report.aux)
@@ -1054,11 +1054,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20896 strings out of 493109
- 378727 string characters out of 6135004
+ 20901 strings out of 493109
+ 378772 string characters out of 6135004
  822433 words of memory out of 5000000
  23396 multiletter control sequences out of 15000+600000
- 121214 words of font info for 507 fonts, out of 8000000 for 9000
+ 121500 words of font info for 511 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,58p,678b,1489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1084,7 +1084,7 @@ e/2014/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on report.pdf (11 pages, 847777 bytes).
+Output written on report.pdf (11 pages, 850002 bytes).
 PDF statistics:
  321 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams

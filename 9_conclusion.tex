@@ -1,5 +1,14 @@
 \section{Conclusion}\label{sec:conclusion}
 
+This paper described an approach for finding data leaks in a binary file using selective symbolic execution techniques provided by the \sse platform.
+The investigated binary file, a self-written application called \app, claimed to be a useful, ad-supported freeware tool, but under certain circumstances turned out to transmit all confidential user data to a server in the internet.
+
+\sse proved to be a mighty platform for universal testing of binary programs and even entire systems.
+With a little practice, its code selection and analysis interfaces can be controlled conveniently via Lua configuration scripts.
+After adequate configuration, \sse's standard analysis output already gives solid insights into the functioning of the investigated binary. Analysis output can be enhanced by writing custom Lua code.
+
+But even under the laboratory settings employed here, with a very small and simple binary, path explosion of the symbolic execution turned out to be a big problem concerning time and the resources it takes to explore all execution states.
+Investigation of real-world applications would require a more intelligent handling of \sse's path forking behaviour, with the goal of pursuing only states which are relevant for the analysis.
 
 
 
