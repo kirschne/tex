@@ -37,14 +37,13 @@ Simply debugging the program should already lead to a rough understanding of the
 Applying techniques like fuzzing \todo{cit} could increase code coverage with the goal of not missing exotic or covert execution paths.
 This paper, however, will rely on analysis using selective symbolic execution as described in chapter \ref{sec:s2e}.\todo{why}
 
+\bigskip
 
-%The software works as follows:
+Before proceeding with the actual analysis, a few notes on the general setup: 
+Since \sse works best with x86 guest architectures, \app was compiled on a x86 Debian system using standard GNU tools (g++).
+For the sake of convenience in this sample scenario the resulting application binary is neither overly optimised nor in any way obfuscated.
+As a consequence, the assembly code still contains meaningful variable and function names.
 
-%What we do not want is...
-
-
-%All analysis will be done using the \sse platform.
-%\todo{m?}
 
 \iffalse
 §4	Project idea: explore privacy issues in a sample binary

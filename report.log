@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 03:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 04:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,8 +991,8 @@ Overfull \hbox (14.58408pt too wide) in paragraph at lines 38--38
 [][][][]\T1/pplj/m/n/10.95 (-20) why  
  []
 
-) (./5_impl.tex [4]
-Overfull \hbox (14.96869pt too wide) in paragraph at lines 21--21
+[4]) (./5_impl.tex
+Overfull \hbox (14.96869pt too wide) in paragraph at lines 18--18
 [][][][]\T1/pplj/m/n/10.95 (-20) con?  
  []
 
@@ -1005,7 +1005,7 @@ File: lstlang2.sty 2014/09/06 1.5e listings language file
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2014/09/06 1.5e listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 30.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 27.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1015,7 +1015,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 34.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 31.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
@@ -1024,30 +1024,27 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 81.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 78.
  [5])
-(./6_ana.tex [6]
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 41.
+(./6_ana.tex [6] <images/cool3.png, id=243, 1330.9725pt x 957.5775pt>
+File: images/cool3.png Graphic file (type png)
 
-LaTeX Font Info:    No file OMSpplj.fd. on input line 41.
+<use images/cool3.png>
+Package pdftex.def Info: images/cool3.png used on input line 35.
+(pdftex.def)             Requested size: 503.16458pt x 361.99835pt.
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 48.
+
+LaTeX Font Info:    No file OMSpplj.fd. on input line 48.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 41.
+(Font)              for symbol `textbullet' on input line 48.
 
-<images/cool3.png, id=243, 1330.9725pt x 957.5775pt>
-File: images/cool3.png Graphic file (type png)
- <use images/cool3.png>
-Package pdftex.def Info: images/cool3.png used on input line 72.
-(pdftex.def)             Requested size: 503.16458pt x 361.99835pt.
-)
-(./7_outlook.tex) (./8_rel_work.tex) (./9_conclusion.tex) (./report.bbl
+) (./7_outlook.tex) (./8_rel_work.tex) (./9_conclusion.tex) (./report.bbl
 [7] [8 <./images/cool3.png>]) 
 AED: lastpage setting LastPage
-[9
-
-] (./report.aux)
+[9] (./report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1056,10 +1053,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20869 strings out of 493109
- 378730 string characters out of 6135004
- 824825 words of memory out of 5000000
- 23410 multiletter control sequences out of 15000+600000
+ 20857 strings out of 493109
+ 378394 string characters out of 6135004
+ 823381 words of memory out of 5000000
+ 23398 multiletter control sequences out of 15000+600000
  119210 words of font info for 475 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,58p,522b,1489s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1086,7 +1083,7 @@ e/2014/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on report.pdf (9 pages, 830595 bytes).
+Output written on report.pdf (9 pages, 830438 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  237 compressed objects within 3 object streams

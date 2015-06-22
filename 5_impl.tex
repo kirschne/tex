@@ -1,10 +1,7 @@
 \section{Implementation}\label{sec:impl}
 
-\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste. Beschreiben, dass alles in Lua gecodet wird. Note: x86
-General notes: before execution in \sse the sample application \app was highly optimised.
-Blabla
-\todo{.}
-
+%\todo{.}Klar machen, welche Plugins ich verwendet habe! Liste. Beschreiben, dass alles in Lua gecodet wird.
+Analysis using the \sse platform is usually done by writing a configuration script in the Lua programming language.
 As described in chapter \ref{sec:s2e}, working with \sse can be divided into a code selection and the actual analysis part.
 
 In the \textbf{code selection phase} \sse is configured to focus on the program \app in user space only.
@@ -108,23 +105,29 @@ pluginsConfig.Annotation = {
 After providing \sse's \textit{Annotations} plugin with all relevant memory addresses plus a little more configuration (shown in listing \ref{lst:ann_def}), we can now execute code every time the program runs into one of the interesting instructions.
 At this point, we will \ldots
 
+\medskip
 1.) log that instruction $X$ was reached.
 Together with other \sse output this information shows which execution paths run into the \textit{send\_data} method and when they do so.
 
+\medskip
 2.) save information about the executed instruction in the current plugin state.
 This allows to check whether there have been prior connections to the internet when the program runs into the next annotated instruction.
 
+\medskip
 3.) read out parameters of the called function.
 The function \textit{send\_data}, for instance, is called with one parameter, which appears to be a memory location.
 Now \sse's analysis interfaces can be employed to dynamically find out what is written in the respective memory.
 
+\medskip
 4.) read (or write) registers ($EAX$, $EBP$, ...).
 Thus \sse users can check and even manipulate the current execution state, similar to debug situations.
 %... Check out call conventions of write, ...
 %This may either be used to check the current internal state, or...
 
+\medskip
 5.) switch variables (memory locations) from concrete to symbolic mode (or vice versa).
-... Nice for controlling consistency models. Not used currently.\todo{.}
+This extremely precise control over the symbolic execution allows a fine-grained implementation of custom consistency models.
+%Nice for controlling consistency models. Not used currently.\todo{.}
 
 \bigskip
 
@@ -185,7 +188,7 @@ Those will be printed upon termination of the path and, apart from helping to un
 Naturally, an important step for understanding symbolic execution of \app is to log and later interpret output of KLEE, the symbolic execution engine used in \sse.
 The behaviour of KLEE can also be controlled via \sse's Lua configuration file.
 
-A few notes on the general setup: ...\todo{}
+
 
 \iffalse
 §5 	Implementation (of the test case using S2E)

@@ -30,6 +30,13 @@ Explain!!!!!\todo{!}
 
 \bigskip
 
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{cool3}
+\caption{Tree visualisation for understanding path forking behaviour in the analysis of \app. Shows at which memory addresses \sse forked new execution states. Path constraints are printed at each state transition. For most states, the \textit{TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$.}
+\label{fig:tree}
+\end{figure*}
+
 Concrete test runs in \sse quickly revealed several \textbf{problems}:
 
 \medskip
@@ -68,11 +75,7 @@ For this reason and due to the fact that most states are irrelevant for the goal
 %It is only the root because....
 %The whole graph (without constraints) looks as folllows:...
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{cool3}
-\caption{Tree visualisation for understanding path forking behaviour in the analysis of \app. Shows at which memory addresses \sse forked new execution states. Path constraints are printed at each state transition. For most states, the \textit{TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$.}
-\label{fig:tree}
-\end{figure*}
+
 
 
 
