@@ -10,14 +10,15 @@
 Instead of concrete input (7, ``string'', ...) symbolic execution uses symbolic values ($\lambda$, $\beta$, ...) when processing code.
 Assignments in the program path have impacts on these symbolic values.
 The integer calculation $x = x - 2$, for instance, would update the symbolic expression representing the input $x$ to $\lambda - 2$.
-Conditional statements (if <condition> then ... else ...) fork program execution into two new paths.
+Conditional statements (\textit{if <condition> then ... else ...}) fork program execution into two new paths.
 Both paths are then constrained by an additional condition, the `then' branch with the if-condition and the `else' branch with the negated if-condition respectively.
-\todo{Bild > Text}
+Figure \ref{fig:introex} conceptually shows how source code can be transformed to symbolic expressions.
+
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{symb_exe_2}
 \caption{Execution tree with path constraints for the symbolic variable $rpm$ \cite{chip14s2e}}
-\label{fig:arch}
+\label{fig:introex}
 \end{figure}
 
 Following this procedure results in a tree-like structure of constrained symbolic expressions.
@@ -64,7 +65,7 @@ Hence one of the main contributions of the EPFL team around Chipounov is the tra
 
 % Bild mit Baum: single-multi-path execution
 
-Figure \ref{fig:tree} depicts the \textbf{interplay of symbolic and concrete execution}.
+Figure \ref{fig:ssetree} depicts the \textbf{interplay of symbolic and concrete execution}.
 The illustration is based on a scenario where an application $App$ is tested.
 A function $appFn$ invokes the method $libFn$ in a library $Lib$, which in turn calls a function $sysFn$ in the kernel.
 Since we suspect a bug in $libFn$, we focus our analysis upon this function.
@@ -83,7 +84,7 @@ This is necessary in order to return a correct calculation result to $appFn$ and
 \begin{figure}
 \includegraphics[width=\columnwidth]{tree}
 \caption{Selective symbolic execution: only paths inside a defined scope of interest (here: a library function $libFn$) are explored symbolically - the rest of the system stack runs concretely \cite{chip14s2e}.}
-\label{fig:tree}
+\label{fig:ssetree}
 \end{figure}
 
 \medskip
@@ -93,7 +94,7 @@ This is done by randomly picking a concrete value which fulfils all path constra
 If, for instance, the current path is constrained with $x \in$ $]-\infty;5]$, \sse might choose $x=4$ and call $sysFn(4)$.\\
 However, when $sysFn(4)$ returns, $libFn$ can no longer make any assumptions about any $x \neq 4$, because the behaviour of $sysFn$ in those cases remains unclear.
 In order to preserve correctness, a new constraint $x = 4$ has to be added to the path\footnote{Constraints added because of a symbolic $\rightarrow$ concrete transition are called `soft constraints'.}.
-But imagine $libFn$ being implemented as shown in figure \ref{fig:tree2}; now the `then' branch of the if-condition ($x < 0$) can never be reached.
+But imagine $libFn$ being implemented as shown in figure \ref{fig:ssetree2}; now the `then' branch of the if-condition ($x < 0$) can never be reached.
 Chipounov calls this effect ``overconstraining'' \cite{chip14s2e} - it is a result of concretising x when leaving the symbolic domain.
 \sse tackles the problem by going back in the execution tree and forking an additional sub-tree.
 The new sub-tree now picks a different concrete value for x which allows to enter the previously unreachable `then' branch.
@@ -102,14 +103,28 @@ The new sub-tree now picks a different concrete value for x which allows to ente
 \begin{figure}
 \includegraphics[width=\columnwidth]{symb_exe}
 \caption{Excerpt from $libFn$'s execution tree \cite{chip12s2e}}
-\label{fig:tree2}
+\label{fig:ssetree2}
 \end{figure}
 
 
 % -------- Konsistenzmodelle -------- %
+\medskip
+%Consistency models...\todo{!}
+The ability to flexibly switch between symbolic and concrete execution enables \sse to handle different \textbf{execution consistency models}.
+Chipounov defines six distinct consistency models.
+For a basic understanding, the following paragraph will describe two of them (see \cite{chip14s2e}, p.~24ff for a detailed explanation of all models).
 
-Consistency models...\todo{!}
+The most simple model is called \textit{strictly consistent concrete execution (SC-CE)}.
+This is the model which is applied when testing or debugging programs either manually or with input from random test case generators (fuzzing).
+`Strict consistency' describes the fact that every execution path can be mapped to concrete input values.
+This model never produces false positives, i.e.~infeasible paths.
 
+
+One entirely different strategy is \textit{relaxed consistency overapproximate consistency (RC-OC)}.
+In this model constraints defined in API contracts can be ignored.
+Under \textit{RC-OC}, a call of the system function \textit{write(fd, buf, count)} would also allow return values larger than $count$, even though that is infeasible (assuming that the C library works correctly).
+This behaviour can be particularly useful for reverse engineering or for finding vulnerabilities in a program.
+\textit{RC-OC} is not consistent (pursues many infeasible paths) but complete (eventually finds every valid path through the system).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

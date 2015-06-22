@@ -21,7 +21,7 @@ In all of these cases symbolic execution must become independent of the server's
 Besides, \app's execution tree currently does not depend on server responses.
 If the application contained switches like `\textit{if srv\_response == x then do ...}', then the consistency model applied in chapters \ref{sec:impl} and \ref{sec:ana} would fail.
 
-Such a scenario would require \sse execution to be configured for using a \textit{overapproximate consistency (RC-OC)} or \textit{control flow graph consistency (RC-CC)} model (see \cite{chip14s2e}, p.~26 ff).
+Such a scenario would require \sse execution to be configured for using a \textit{overapproximate consistency (RC-OC)} or \textit{control flow graph consistency (RC-CC)} model (see \cite{chip14s2e}, p.~26ff).
 In the \app example, this would mean that responses from the server have to be intercepted and replaced with unconstrained symbolic variables.
 Practically speaking, the whole function \textit{send\_data} would have to be replaced with a symbolic variable.
 As a consequence, \sse would of course produce lots of states based on completely absurd potential server responses.

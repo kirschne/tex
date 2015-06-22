@@ -16,18 +16,15 @@
 \citation{chip09sel}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Execution tree with path constraints for the symbolic variable $rpm$ \cite  {chip14s2e}\relax }}{2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:arch}{{1}{2}}
+\newlabel{fig:introex}{{1}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Selective Symbolic Execution}{2}}
 \newlabel{sec:s2e}{{2}{2}}
-\@writefile{tdo}{\contentsline {todo}{{Bild > Text}}{2}}
-\pgfsyspdfmark {pgfid1}{11682764}{30823058}
-\pgfsyspdfmark {pgfid3}{11891591}{30705259}
-\pgfsyspdfmark {pgfid2}{627744}{31949789}
 \citation{chip14s2e}
 \citation{chip14s2e}
 \citation{chip14s2e}
 \citation{chip12s2e}
 \citation{chip12s2e}
+\citation{chip14s2e}
 \citation{qemu}
 \citation{qemu05}
 \citation{klee}
@@ -37,71 +34,31 @@
 \citation{chip12s2e}
 \citation{chip12s2e}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Selective symbolic execution: only paths inside a defined scope of interest (here: a library function $libFn$) are explored symbolically - the rest of the system stack runs concretely \cite  {chip14s2e}.\relax }}{3}}
-\newlabel{fig:tree}{{2}{3}}
+\newlabel{fig:ssetree}{{2}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Excerpt from $libFn$'s execution tree \cite  {chip12s2e}\relax }}{3}}
-\newlabel{fig:tree2}{{3}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architecture of the S\textsuperscript  {2}E\xspace  platform \cite  {chip12s2e}\relax }}{3}}
-\newlabel{fig:arch}{{4}{3}}
-\@writefile{tdo}{\contentsline {todo}{{!}}{3}}
-\pgfsyspdfmark {pgfid4}{28054889}{35659916}
-\pgfsyspdfmark {pgfid6}{28263716}{35542117}
-\pgfsyspdfmark {pgfid5}{37347078}{35888899}
+\newlabel{fig:ssetree2}{{3}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}The S\textsuperscript  {2}E\xspace  Platform}{3}}
 \newlabel{sec:platform}{{3}{3}}
 \citation{chip14s2e}
-\@writefile{tdo}{\contentsline {todo}{{m?}}{4}}
-\pgfsyspdfmark {pgfid7}{5802602}{25079526}
-\pgfsyspdfmark {pgfid9}{6011429}{24961727}
-\pgfsyspdfmark {pgfid8}{627744}{25308509}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architecture of the S\textsuperscript  {2}E\xspace  platform \cite  {chip12s2e}\relax }}{4}}
+\newlabel{fig:arch}{{4}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Project Idea and Research Questions}{4}}
 \newlabel{sec:proj}{{4}{4}}
-\@writefile{tdo}{\contentsline {todo}{{obf}}{4}}
-\pgfsyspdfmark {pgfid10}{26818683}{34208895}
-\pgfsyspdfmark {pgfid12}{27006041}{34091096}
-\pgfsyspdfmark {pgfid11}{37347078}{34444336}
-\@writefile{tdo}{\contentsline {todo}{{cmd}}{4}}
-\pgfsyspdfmark {pgfid13}{23813868}{28861155}
-\pgfsyspdfmark {pgfid15}{24054170}{28743356}
-\pgfsyspdfmark {pgfid14}{37347078}{29096596}
-\@writefile{tdo}{\contentsline {todo}{{cit}}{4}}
-\pgfsyspdfmark {pgfid16}{27845530}{12474765}
-\pgfsyspdfmark {pgfid18}{28054625}{12356966}
-\pgfsyspdfmark {pgfid17}{37347078}{12710206}
-\@writefile{tdo}{\contentsline {todo}{{why}}{4}}
-\pgfsyspdfmark {pgfid19}{26897856}{8909605}
-\pgfsyspdfmark {pgfid21}{27106683}{8791806}
-\pgfsyspdfmark {pgfid20}{37347078}{9238875}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Implementation}{5}}
 \newlabel{sec:impl}{{5}{5}}
-\@writefile{tdo}{\contentsline {todo}{{..}}{5}}
-\pgfsyspdfmark {pgfid22}{3663767}{25101664}
-\pgfsyspdfmark {pgfid24}{3977016}{24983865}
-\pgfsyspdfmark {pgfid23}{627744}{25330647}
-\@writefile{tdo}{\contentsline {todo}{{con?}}{5}}
-\pgfsyspdfmark {pgfid25}{15749502}{23319084}
-\pgfsyspdfmark {pgfid27}{15958329}{23201285}
-\pgfsyspdfmark {pgfid26}{627744}{23554525}
-\@writefile{tdo}{\contentsline {todo}{{..}}{5}}
-\pgfsyspdfmark {pgfid28}{15910253}{20640036}
-\pgfsyspdfmark {pgfid30}{16119080}{20522237}
-\pgfsyspdfmark {pgfid29}{627744}{20869019}
 \newlabel{lst:ass}{{1}{5}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Relevant parts of the function \textit  {send\_data} in assembly code. Interesting calls are highlighted.}{5}}
-\@writefile{tdo}{\contentsline {todo}{{?}}{5}}
-\pgfsyspdfmark {pgfid31}{24814847}{31905003}
-\pgfsyspdfmark {pgfid33}{25023674}{31787204}
-\pgfsyspdfmark {pgfid32}{37347078}{32133986}
-\newlabel{lst:ann_def}{{2}{5}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Configuration of the \textit  {Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions. Note the link to the binary in listing \ref  {lst:ass} via memory addresses.}{5}}
+\newlabel{lst:ann_def}{{2}{6}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Configuration of the \textit  {Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions. Note the link to the binary in listing \ref  {lst:ass} via memory addresses.}{6}}
 \newlabel{lst:send_data}{{3}{6}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Lua function executed upon every call of the function send\_data(). See lines 18 - 24 in listing \ref  {lst:ann_def} for the registration of \textit  {call\_ann}.}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Analysis of S\textsuperscript  {2}E\xspace  Output}{6}}
-\newlabel{sec:ana}{{6}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Analysis of S\textsuperscript  {2}E\xspace  Output}{7}}
+\newlabel{sec:ana}{{6}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tree visualisation for understanding path forking behaviour in the analysis of \textit  {SuperTaxCalcPro}\xspace  . Shows at which memory addresses S\textsuperscript  {2}E\xspace  forked new execution states. Path constraints are printed at each state transition. For most states, the \textit  {TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$. Blue dots symbolise that in this state a ``donation'' message was transferred to a server. Red dots mark states which leak the complete set of user inputs.\relax }}{8}}
 \newlabel{fig:tree}{{5}{8}}
-\citation{chip14s2e}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Outlook}{10}}
 \newlabel{sec:outlook}{{7}{10}}
+\citation{chip14s2e}
 \citation{trojan14}
 \bibstyle{amsplain}
 \bibdata{bib}
@@ -114,13 +71,13 @@
 \bibcite{chip14s2e}{7}
 \bibcite{chip09sel}{8}
 \bibcite{chip11s2e}{9}
-\bibcite{llvm04}{10}
-\bibcite{nasa08}{11}
-\bibcite{chip12s2e}{12}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Related Work}{11}}
 \newlabel{sec:rel_work}{{8}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{11}}
 \newlabel{sec:conclusion}{{9}{11}}
-\newlabel{LastPage}{{}{11}}
-\xdef\lastpage@lastpage{11}
+\bibcite{llvm04}{10}
+\bibcite{nasa08}{11}
+\bibcite{chip12s2e}{12}
+\newlabel{LastPage}{{}{12}}
+\xdef\lastpage@lastpage{12}
 \gdef\lastpage@lastpageHy{}

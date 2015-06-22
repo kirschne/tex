@@ -14,14 +14,15 @@ The next step is to precisely specify which variables shall be treated symbolica
 In general, as a start we want to make all user inputs symbolic.
 For a closed source binary this can be done in several ways.
 A command line tool can be called from a wrapper program which hands over symbolic arguments instead of concrete ones.
-If user input is entered in a UI, a further look into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.\todo{..}
+If user input is entered in a UI, a further look into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.%\todo{..}
 %look for ... calls...
-\sse can intercept execution of the specified memory addresses and replace them with symbolic values (state:writeMemorySymb(\ldots)).\todo{con?}
+\sse can intercept execution of the specified memory addresses and replace them with symbolic values (state:writeMemorySymb(\ldots)).
+%\todo{con?}
 % consistency models?????
 
 KLEE, the engine for symbolic execution, also requires some configuration.
 As path search strategy this analysis uses a depth first search.
-\todo{..}
+%\todo{..}
 
 \bigskip
 % -------------------------------------------------------------------
@@ -69,7 +70,7 @@ Since all calls concerned with connecting to the internet seem to take place in 
 Listing \ref{lst:ass} shows relevant parts of the function \textit{send\_data} in assembly code.
 %, together with comments...
 
-Verbindung\todo{?}
+%Verbindung\todo{?}
 
 \bigskip
 % -------------------------------------------------------------------
@@ -130,25 +131,7 @@ Thus \sse users can check and even manipulate the current execution state, simil
 This extremely precise control over the symbolic execution allows a fine-grained implementation of custom consistency models.
 %Nice for controlling consistency models. Not used currently.\todo{.}
 
-\bigskip
-
-Listing \ref{lst:send_data}, for instance, shows the Lua function which is triggered on every execution of the assembly function \textit{send\_data} (see listing \ref{lst:ann_def} for the registration of this function and its coupling to a specific memory address).
-Because \textit{send\_data} was registered as a function call in listing \ref{lst:ann_def}, \sse's interfaces facilitate the extraction of all parameters via \textit{state:readParameter()}.
-A sample test run shows that $arg0$ is clearly a memory address, so the next step must be to examine what data is stored at this location.
-The method \textit{print\_mem} does just that and additionally brings the contents into a human-readable format.
-Then the Lua script stores information that this function was called in the current execution state.
-Doing so, the next call will notice that the method has been executed before, increment the counter and write this fact into a log file.
-
-The $else$ branch will be called when the function returns.
-Following common calling conventions, we expect return values to be transmitted via the register $EAX$ (and $EDX$ if bigger than four bytes), hence $EAX$ could also hold interesting information.
-Unfortunately, this does not seem to be the case as $EAX$ is always $0$ except in some error cases.
-So \textit{send\_data} is probably just returning a status integer value.
-
-
-
-
-
-
+%\bigskip
 
 \bigskip
 % -------------------------------------------------------------------
@@ -175,6 +158,26 @@ function call_ann (state, curPlgState)
 end
 \end{lstlisting}
 \bigskip
+
+Listing \ref{lst:send_data}, for instance, shows the Lua function which is triggered on every execution of the assembly function \textit{send\_data} (see listing \ref{lst:ann_def} for the registration of this function and its coupling to a specific memory address).
+Because \textit{send\_data} was registered as a function call in listing \ref{lst:ann_def}, \sse's interfaces facilitate the extraction of all parameters via \textit{state:readParameter()}.
+A sample test run shows that $arg0$ is clearly a memory address, so the next step must be to examine what data is stored at this location.
+The method \textit{print\_mem} does just that and additionally brings the contents into a human-readable format.
+Then the Lua script stores information that this function was called in the current execution state.
+Doing so, the next call will notice that the method has been executed before, increment the counter and write this fact into a log file.
+
+The $else$ branch will be called when the function returns.
+Following common calling conventions, we expect return values to be transmitted via the register $EAX$ (and $EDX$ if bigger than four bytes), hence $EAX$ could also hold interesting information.
+Unfortunately, this does not seem to be the case as $EAX$ is always $0$ except in some error cases.
+So \textit{send\_data} is probably just returning a status integer value.
+
+
+
+
+
+
+
+
 
 %Figure \ref{} shows relevant parts of the assembly code. Figure \ref{} presents excerpts from the resulting analysis plugin.
 
