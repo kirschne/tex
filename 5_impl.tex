@@ -28,34 +28,34 @@ As path search strategy this analysis uses a depth first search.
 \bigskip
 % -------------------------------------------------------------------
 \begin{lstlisting}[language={[x86masm]Assembler}, escapeinside={(*§}{§*)}, basicstyle=\ttfamily\tiny, caption={Relevant parts of the function \textit{send\_data} in assembly code. Interesting calls are highlighted.}, label={lst:ass}, morekeywords={movl, movw, cmpl}]
-0804940c (*§\hl{<\_Z9send\_dataPc>:}§*)
+08049415 (*§\hl{<\_Z9send\_dataPc>:}§*)
+		.
+		.
+ 8049451: e8 ba fa ff ff       	call   8048f10 <socket@plt>
+		.
+		.
+ 80494f2: e8 09 f9 ff ff       	call   8048e00 (*§\hl{<connect@plt>}§*)
+ 80494f7: c1 e8 1f             	shr    $0x1f,%eax
+ 80494fa: 84 c0                	test   %al,%al
+ 80494fc: 74 0c                	je     804950a 					<_Z9send_dataPc+0xf5>
+ 80494fe: c7 04 24 83 a0 04 08 	movl   $0x804a083,(%esp)
+ 8049505: e8 f9 fe ff ff       	call   8049403 <_Z5errorPKc>
+ 804950a: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
+ 8049510: 89 04 24             	mov    %eax,(%esp)
+ 8049513: e8 18 fa ff ff       	call   8048f30 <strlen@plt>
+ 8049518: 89 44 24 08          	mov    %eax,0x8(%esp)
+ 804951c: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
+ 8049522: 89 44 24 04          	mov    %eax,0x4(%esp)
+ 8049526: 8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8049529: 89 04 24             	mov    %eax,(%esp)
+ 804952c: e8 4f f9 ff ff       	call   8048e80 (*§\hl{<write@plt>}§*)
  		.
  		.
- 8049448: e8 c3 fa ff ff       	call   8048f10 <socket@plt>
-		.
-		.
- 80494e9: e8 12 f9 ff ff       	call   8048e00 (*§\hl{<connect@plt>}§*)
- 80494ee: c1 e8 1f             	shr    $0x1f,%eax
- 80494f1: 84 c0                	test   %al,%al
- 80494f3: 74 0c                	je     8049501						<_Z9send_dataPc+0xf5>
- 80494f5: c7 04 24 83 a0 04 08 	movl   $0x804a083,(%esp)
- 80494fc: e8 f9 fe ff ff       	call   80493fa <_Z5errorPKc>
- 8049501: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 8049507: 89 04 24             	mov    %eax,(%esp)
- 804950a: e8 21 fa ff ff       	call   8048f30 <strlen@plt>
- 804950f: 89 44 24 08          	mov    %eax,0x8(%esp)
- 8049513: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 8049519: 89 44 24 04          	mov    %eax,0x4(%esp)
- 804951d: 8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049520: 89 04 24             	mov    %eax,(%esp)
- 8049523: e8 58 f9 ff ff       	call   8048e80 (*§\hl{<write@plt>}§*)
-		.
-		.
- 804955b: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 8049561: 89 44 24 04          	mov    %eax,0x4(%esp)
- 8049565: 8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049568: 89 04 24             	mov    %eax,(%esp)
- 804956b: e8 70 f9 ff ff       	call   8048ee0 (*§\hl{<read@plt>}§*)
+ 8049564: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
+ 804956a: 89 44 24 04          	mov    %eax,0x4(%esp)
+ 804956e: 8b 45 f0             	mov    -0x10(%ebp),%eax
+ 8049571: 89 04 24             	mov    %eax,(%esp)
+ 8049574: e8 67 f9 ff ff       	call   8048ee0 (*§\hl{<read@plt>}§*)
 		.
 		.
 \end{lstlisting}
@@ -80,7 +80,7 @@ pluginsConfig.Annotation = {
   annotation_write = {
     active=true,
     module="prog",
-    address=0x8049523, -- write()
+    address=0x804952c, -- write()
     instructionAnnotation="do_write",
     beforeInstruction=true,
     switchInstructionToSymbolic=false
@@ -88,7 +88,7 @@ pluginsConfig.Annotation = {
   annotation_read = {
     active=true,
     module="prog",
-    address=0x804956b, -- read()
+    address=0x8049574, -- read()
     instructionAnnotation="do_read",
     beforeInstruction=false, 
     switchInstructionToSymbolic=false
@@ -96,7 +96,7 @@ pluginsConfig.Annotation = {
   annotation_send_data = {
     active=true,
     module="prog",
-    address=0x804940c, -- send_data()
+    address=0x8049415, -- send_data()
     callAnnotation="call_ann",
     paramcount = 1
   }
@@ -185,7 +185,7 @@ Those will be printed upon termination of the path and, apart from helping to un
 Naturally, an important step for understanding symbolic execution of \app is to log and later interpret output of KLEE, the symbolic execution engine used in \sse.
 The behaviour of KLEE can also be controlled via \sse's Lua configuration file.
 
-
+A few notes on the general setup: ...\todo{}
 
 \iffalse
 §5 	Implementation (of the test case using S2E)
