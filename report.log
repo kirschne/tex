@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 05:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  22 JUN 2015 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1033,16 +1033,16 @@ LaTeX Warning: Marginpar on page 7 moved.
 <images/cool3.png, id=243, 1330.9725pt x 957.5775pt>
 File: images/cool3.png Graphic file (type png)
  <use images/cool3.png>
-Package pdftex.def Info: images/cool3.png used on input line 53.
+Package pdftex.def Info: images/cool3.png used on input line 69.
 (pdftex.def)             Requested size: 503.16458pt x 361.99835pt.
-LaTeX Font Info:    Try loading font information for OMS+pplj on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 82.
 
-LaTeX Font Info:    No file OMSpplj.fd. on input line 66.
+LaTeX Font Info:    No file OMSpplj.fd. on input line 82.
 
 
 LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 66.
+(Font)              for symbol `textbullet' on input line 82.
 
 [7] [8 <./images/cool3.png>]) (./7_outlook.tex) (./8_rel_work.tex)
 (./9_conclusion.tex) (./report.bbl) 
@@ -1056,11 +1056,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20866 strings out of 493109
- 378569 string characters out of 6135004
- 822589 words of memory out of 5000000
+ 20867 strings out of 493109
+ 378575 string characters out of 6135004
+ 822590 words of memory out of 5000000
  23402 multiletter control sequences out of 15000+600000
- 118960 words of font info for 478 fonts, out of 8000000 for 9000
+ 119217 words of font info for 479 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,58p,522b,1489s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1086,7 +1086,7 @@ e/2014/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on report.pdf (9 pages, 831871 bytes).
+Output written on report.pdf (9 pages, 834910 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  237 compressed objects within 3 object streams

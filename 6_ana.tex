@@ -20,7 +20,7 @@ The hexadecimal number at the origin of each edge is the memory address in which
 For the sake of clarity I also manually added the function in which each memory address occurs.
 
 Edges are labelled with constraints that need to be respected in the corresponding execution state.
-KLEE handles constraints in Extended Backus-Naur Form syntax (e.g., ``(Not (Slt (w32 0x20a1) (ReadLSB w32 0x0 v0\_income\_0)))'' for ``income >= 8353'').
+KLEE handles constraints in Extended Backus-Naur Form syntax (e.g., \textit{``(Not (Slt (w32 0x20a1) (ReadLSB w32 0x0 v0\_income\_0)))''} for $``income \ge 8353''$).
 For simplicity all constraints were also manipulated manually and transformed into a more readable format.
 
 %Blue state boxes indicate one connection to the internet so far, yellow two and red three.
@@ -32,15 +32,25 @@ Upon termination of a state it finds concrete input examples for the two symboli
 Before coming to the actual research objectives of this paper, namely finding privacy problems, a quick interpretation of the bare tree shown in figure \ref{fig:tree} helps to gain a common understanding of \app.
 
 Program execution largely relies on two integer variables, $income$ and the tax category $taxcat$.
-Most forks in the assembly function $main()$ seem to be basic checks if these two variables contain valid data (e.g., \textit{taxcat > 6}).
-This assumption arises from the fact that many of these forks are leafs which exist only a very short time and consume hardly any memory (can be checked via the \textit{MemoryChecker} plugin).
+Most forks in the assembly function $main()$ seem to be basic checks if these two variables contain valid data (e.g., $[taxcat > 6]$).
+This assumption arises from the fact that many of these forks are leaves which exist only a very short time and consume hardly any memory (can be checked via the \textit{MemoryChecker} plugin).
 These paths are probably error cases that terminate the program.
 
-Important logic seems to take place in a function called \textit{calc_tax()}.
+Important logic seems to take place in a function called \textit{calc\_tax()}.
 Many forks originate in this method and both symbolic variables play a role in it.
-\todo{...}
-Unfortunately we do not know what happens if $income$ is below or equal 8353.
-This is due to the fact....
+Important in this case means `important with respect to being relevant to the symbolic execution of the two focal variables $income$ and $taxcat$'.
+Paths with the constraints $[income < 13468]$ and $[income < 52880]$ seem to be less important since they are leaves in the tree.
+The two paths $[52880 \le income < 250729]$ and $[income \ge 25729]$, however, entail further checks of $taxcat$, the other symbolic variable.
+Summarising the general findings so far, \app checks the user's income and tax category and takes special actions if the income is higher than 52880 Euro.
+
+Unfortunately, due to the problem with incomplete test results (described at the end of this chapter), the tree in figure \ref{fig:tree} does not show all execution states.
+While many states (900+) were manually left out due to insignificance, many more states are missing in \sse's output despite potentially being relevant.
+For example, we cannot say what happens if $income$ is below or equal 8353 (the complementary event of the switch from state 3 to state 4).
+
+\medskip
+
+After this general inspection of \app's behaviour, we can finally shift the focus towards the research objectives regarding privacy issues.
+ 
 
 
 
