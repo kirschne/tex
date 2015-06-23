@@ -26,6 +26,12 @@ Radu Banabic, George Candea, and Rachid Guerraoui, \emph{{Finding Trojan
 Fabrice Bellard, \emph{{QEMU, a Fast and Portable Dynamic Translator}}, USENIX
   Annual Technical Conference, FREENIX Track, 2005, pp.~41--46.
 
+\bibitem{caballero2010input}
+Juan Caballero, Pongsin Poosankam, Stephen McCamant, Dawn Song, et~al.,
+  \emph{{Input Generation via Decomposition and Re-stitching: Finding Bugs in
+  Malware}}, Proceedings of the 17th ACM conference on Computer and
+  communications security, ACM, 2010, pp.~413--425.
+
 \bibitem{klee08}
 Cristian Cadar, Daniel Dunbar, and Dawson~R Engler, \emph{{KLEE: Unassisted and
   Automatic Generation of High-Coverage Tests for Complex Systems Programs}},
@@ -35,6 +41,11 @@ Cristian Cadar, Daniel Dunbar, and Dawson~R Engler, \emph{{KLEE: Unassisted and
 Vitaly Chipounov, \emph{{S2E: A Platform for In-Vivo Multi-Path Analysis of
   Software Systems}}, Ph.D. thesis, {\'{E}}cole Polytechnique
   F{\'{e}}d{\'{e}}rale de Lausanne (EPFL), 2014.
+
+\bibitem{chipounov2010reverse}
+Vitaly Chipounov and George Candea, \emph{{Reverse Engineering of Binary Device
+  Drivers with RevNIC}}, Proceedings of the 5th European conference on Computer
+  systems, ACM, 2010, pp.~167--180.
 
 \bibitem{chip09sel}
 Vitaly Chipounov, Vlad Georgescu, Cristian Zamfir, and George Candea,
@@ -59,6 +70,18 @@ Corina Pasareanu, Peter~C Mehlitz, David Bushnell, Karen Gundy-Burlet, Michael
   Execution and System-Level Concrete Execution for Testing NASA Software}},
   Proceedings of the 2008 international symposium on Software testing and
   analysis, ACM, 2008, pp.~15--26.
+
+\bibitem{song2008bitblaze}
+Dawn Song, David Brumley, Heng Yin, Juan Caballero, Ivan Jager, Min~Gyung Kang,
+  Zhenkai Liang, James Newsome, Pongsin Poosankam, and Prateek Saxena,
+  \emph{{BitBlaze: A New Approach to Computer Security via Binary Analysis}},
+  Information systems security, Springer, 2008, pp.~1--25.
+
+\bibitem{chipounov2011enabling}
+{Vitaly Chipounov, and George Candea}, \emph{{Enabling Sophisticated Analyses
+  of x86 Binaries with RevGen}}, Dependable Systems and Networks Workshops
+  (DSN-W), 2011 IEEE/IFIP 41st International Conference on, IEEE, 2011,
+  pp.~211--216.
 
 \bibitem{chip12s2e}
 {Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea}, \emph{The {S2E}

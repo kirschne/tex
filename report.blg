@@ -7,45 +7,45 @@ Warning--to sort, need author or key in qemu
 Warning--to sort, need author or key in klee
 Warning--to sort, need author or key in llvm
 Warning--missing pages in chip12s2e
-You've used 12 entries,
+You've used 16 entries,
             2213 wiz_defined-function locations,
-            559 strings with 5788 characters,
-and the built_in function-call counts, 3822 in all, are:
-= -- 336
-> -- 152
+            581 strings with 6773 characters,
+and the built_in function-call counts, 5812 in all, are:
+= -- 526
+> -- 253
 < -- 1
-+ -- 63
-- -- 50
-* -- 252
-:= -- 565
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 61
++ -- 103
+- -- 86
+* -- 394
+:= -- 861
+add.period$ -- 16
+call.type$ -- 16
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 189
-empty$ -- 363
-format.name$ -- 50
-if$ -- 846
+cite$ -- 20
+duplicate$ -- 274
+empty$ -- 519
+format.name$ -- 86
+if$ -- 1289
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 20
-newline$ -- 46
-num.names$ -- 18
-pop$ -- 105
+int.to.str$ -- 16
+missing$ -- 28
+newline$ -- 58
+num.names$ -- 26
+pop$ -- 143
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 74
 quote$ -- 0
-skip$ -- 150
+skip$ -- 232
 stack$ -- 0
-substring$ -- 197
-swap$ -- 48
+substring$ -- 332
+swap$ -- 80
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 64
 warning$ -- 4
-while$ -- 33
-width$ -- 14
-write$ -- 108
+while$ -- 53
+width$ -- 18
+write$ -- 148
 (There were 4 warnings)
