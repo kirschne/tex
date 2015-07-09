@@ -26,35 +26,35 @@ As path search strategy this analysis uses a depth first search.
 
 \bigskip
 % -------------------------------------------------------------------
-\begin{lstlisting}[language={[x86masm]Assembler}, escapeinside={(*§}{§*)}, basicstyle=\ttfamily\tiny, caption={Relevant parts of the function \textit{send\_data} in assembly code. Interesting calls are highlighted.}, label={lst:ass}, morekeywords={movl, movw, cmpl}]
+\begin{lstlisting}[language={[x86masm]Assembler}, escapeinside={(*§}{§*)}, basicstyle=\ttfamily\scriptsize, caption={Relevant parts of the function \textit{send\_data} in assembly code. Interesting calls are highlighted.}, label={lst:ass}, morekeywords={movl, movw, cmpl}]
 08049415 (*§\hl{<\_Z9send\_dataPc>:}§*)
 		.
 		.
- 8049451: e8 ba fa ff ff       	call   8048f10 <socket@plt>
+ 8049451:   call   8048f10 <socket@plt>
 		.
 		.
- 80494f2: e8 09 f9 ff ff       	call   8048e00 (*§\hl{<connect@plt>}§*)
- 80494f7: c1 e8 1f             	shr    $0x1f,%eax
- 80494fa: 84 c0                	test   %al,%al
- 80494fc: 74 0c                	je     804950a 					<_Z9send_dataPc+0xf5>
- 80494fe: c7 04 24 83 a0 04 08 	movl   $0x804a083,(%esp)
- 8049505: e8 f9 fe ff ff       	call   8049403 <_Z5errorPKc>
- 804950a: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 8049510: 89 04 24             	mov    %eax,(%esp)
- 8049513: e8 18 fa ff ff       	call   8048f30 <strlen@plt>
- 8049518: 89 44 24 08          	mov    %eax,0x8(%esp)
- 804951c: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 8049522: 89 44 24 04          	mov    %eax,0x4(%esp)
- 8049526: 8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049529: 89 04 24             	mov    %eax,(%esp)
- 804952c: e8 4f f9 ff ff       	call   8048e80 (*§\hl{<write@plt>}§*)
- 		.
- 		.
- 8049564: 8d 85 d8 fe ff ff    	lea    -0x128(%ebp),%eax
- 804956a: 89 44 24 04          	mov    %eax,0x4(%esp)
- 804956e: 8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049571: 89 04 24             	mov    %eax,(%esp)
- 8049574: e8 67 f9 ff ff       	call   8048ee0 (*§\hl{<read@plt>}§*)
+ 80494f2:   call   8048e00 (*§\hl{<connect@plt>}§*)
+ 80494f7:   shr    $0x1f,%eax
+ 80494fa:   test   %al,%al
+ 80494fc:   je     804950a				 <_Z9send_dataPc+0xf5>
+ 80494fe:   movl   $0x804a083,(%esp)
+ 8049505:   call   8049403 <_Z5errorPKc>
+ 804950a:   lea    -0x128(%ebp),%eax
+ 8049510:   mov    %eax,(%esp)
+ 8049513:   call   8048f30 <strlen@plt>
+ 8049518:   mov    %eax,0x8(%esp)
+ 804951c:   lea    -0x128(%ebp),%eax
+ 8049522:   mov    %eax,0x4(%esp)
+ 8049526:   mov    -0x10(%ebp),%eax
+ 8049529:   mov    %eax,(%esp)
+ 804952c:   call   8048e80 (*§\hl{<write@plt>}§*)
+ 	 	.
+ 	 	.
+ 8049564:   lea    -0x128(%ebp),%eax
+ 804956a:   mov    %eax,0x4(%esp)
+ 804956e:   mov    -0x10(%ebp),%eax
+ 8049571:   mov    %eax,(%esp)
+ 8049574:   call   8048ee0 (*§\hl{<read@plt>}§*)
 		.
 		.
 \end{lstlisting}

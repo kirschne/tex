@@ -30,7 +30,7 @@ Each conditional statement involving symbolic values results in a $fork$ of the 
 The two newly created branches are completely independent and can therefore be processed in parallel.
 
 % -------path explosion
-But the exponential growth of conditionals soon reveals scaling problems of this forking strategy.
+As a consequence, the exponential growth of conditionals soon reveals scaling problems of this forking strategy.
 Despite heavy research on optimisations mitigating this \textit{path explosion} problem
 % \todo{ct} 
 only relatively small programs ($\cong$ thousands of lines of code) can be analysed symbolically \cite{chip09sel}.
@@ -78,7 +78,7 @@ When execution enters the function $libFn$ it has to change from concrete into s
 This is done by replacing concrete parameters in the method call with symbolic variables.
 The call $libFn(10)$ becomes $libFn(\lambda)$, optionally also with constraints: $libFn(\lambda \le 15)$.\\
 Besides the symbolic multi-path execution, \sse simultaneously also runs the function with its original concrete arguments.
-This is necessary in order to return a correct calculation result to $appFn$ and thus keep the execution of $App$ consistent.
+This is necessary in order to return a feasible calculation result to $appFn$ and thus keep the execution of $App$ consistent.
 
 
 \begin{figure}
@@ -89,7 +89,7 @@ This is necessary in order to return a correct calculation result to $appFn$ and
 
 \medskip
 \textbf{Symbolic} $\rightarrow$ \textbf{concrete transition:}
-Since the operating system is not focus of this analysis example, \sse has to switch from symbolic to concrete domain when $libFn$ calls into the kernel.
+Since the operating system is not the focus of this analysis example, \sse has to switch from symbolic to concrete domain when $libFn$ calls into the kernel.
 This is done by randomly picking a concrete value which fulfils all path constraints.
 If, for instance, the current path is constrained with $x \in$ $]-\infty;5]$, \sse might choose $x=4$ and call $sysFn(4)$.\\
 However, when $sysFn(4)$ returns, $libFn$ can no longer make any assumptions about any $x \neq 4$, because the behaviour of $sysFn$ in those cases remains unclear.

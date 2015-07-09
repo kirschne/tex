@@ -40,7 +40,7 @@ Important logic seems to take place in a function called \textit{calc\_tax()}.
 Many forks originate in this method and both symbolic variables play a role in it.
 Important in this case means `important with respect to being relevant to the symbolic execution of the two focal variables $income$ and $taxcat$'.
 Paths with the constraints $[income < 13468]$ and $[income < 52880]$ seem to be less important since they are leaves in the tree.
-The two paths $[52880 \le income < 250729]$ and $[income \ge 25729]$, however, entail further checks of $taxcat$, the other symbolic variable.
+The two paths $[52880 \le income < 250729]$ and $[income \ge 250729]$, however, entail further checks of $taxcat$, the other symbolic variable.
 Summarising the general findings so far, \app checks the user's income and tax category and takes special actions if the income is higher than 52880 euros.
 
 Unfortunately, due to the problem with incomplete test results (described at the end of this chapter), the tree in figure \ref{fig:tree} does not show all execution states.

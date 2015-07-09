@@ -2,10 +2,10 @@
 
 Based on the concepts described in the previous chapter, Chipounov and his team implemented the \sse platform, an open source framework for writing custom system analysis tools.
 \sse employs the theoretical concepts of selective symbolic execution by running the system under analysis in a virtual machine and treating code within the scope of interest as symbolic.
-These symbolic parts are translated into an intermediate representation (LLVM IR), while irrelevant instructions are directly passed to the host for native execution.
+These symbolic parts are translated into an intermediate representation (LLVM IR \cite{bitcode}), while irrelevant instructions are directly passed to the host for native execution (see \cite{chip12s2e}, chapter 4.1.2).
 
 
-Technical backbone of \sse are the virtual machine hypervisor QEMU \cite{qemu, qemu05}, the symbolic execution engine KLEE \cite{klee, klee08} and the LLVM compiler infrastructure \cite{llvm, llvm04}.
+Technical backbone of \sse are the virtual machine emulator QEMU \cite{qemu, qemu05}, the symbolic execution engine KLEE \cite{klee, klee08} and the LLVM compiler infrastructure \cite{llvm, llvm04}.
 Figure \ref{fig:arch} gives an overview of how these technologies are integrated into the \sse platform.
 The top of the picture depicts the software stack of the guest system (=the system under analysis), which is managed by QEMU.
 \sse is not restricted to user land applications, but also allows inspection on deeper levels (e.g., operating system functions).
@@ -22,7 +22,7 @@ For easier emulation, QEMU translates machine code of the guest system into an i
 \sse's dynamic binary translator (DBT) splits the resulting microoperations into those that need to be explored symbolically and those which may run concretely.
 All concrete microoperations are directly converted into host instructions.
 Symbolic expressions, on the other hand, are prepared for being executed on the KLEE engine.
-This requires microoperations to be translated into the LLVM intermediate representation, called LLVM Bitcode in figure \ref{fig:arch}.
+This requires microoperations to be translated into the LLVM intermediate representation, called LLVM Bitcode \cite{bitcode} in figure \ref{fig:arch}.
 
 \sse's execution engine, which is an extension to QEMU's execution engine, now manages the operation of the platform.
 In an endless loop it asks the DBT for new guest code.

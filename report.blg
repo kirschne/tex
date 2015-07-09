@@ -3,49 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: report.aux
 The style file: amsplain.bst
 Database file #1: bib.bib
+Warning--to sort, need author or key in bitcode
 Warning--to sort, need author or key in qemu
 Warning--to sort, need author or key in klee
 Warning--to sort, need author or key in llvm
 Warning--missing pages in chip12s2e
-You've used 16 entries,
+You've used 17 entries,
             2213 wiz_defined-function locations,
-            581 strings with 6773 characters,
-and the built_in function-call counts, 5812 in all, are:
-= -- 526
-> -- 253
+            584 strings with 6845 characters,
+and the built_in function-call counts, 5978 in all, are:
+= -- 538
+> -- 254
 < -- 1
-+ -- 103
++ -- 104
 - -- 86
-* -- 394
-:= -- 861
-add.period$ -- 16
-call.type$ -- 16
-change.case$ -- 90
+* -- 402
+:= -- 878
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 93
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 274
-empty$ -- 519
+cite$ -- 22
+duplicate$ -- 285
+empty$ -- 545
 format.name$ -- 86
-if$ -- 1289
+if$ -- 1330
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 28
-newline$ -- 58
+int.to.str$ -- 17
+missing$ -- 29
+newline$ -- 61
 num.names$ -- 26
-pop$ -- 143
+pop$ -- 153
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 76
 quote$ -- 0
-skip$ -- 232
+skip$ -- 239
 stack$ -- 0
-substring$ -- 332
-swap$ -- 80
+substring$ -- 337
+swap$ -- 81
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
-warning$ -- 4
+type$ -- 68
+warning$ -- 5
 while$ -- 53
-width$ -- 18
-write$ -- 148
-(There were 4 warnings)
+width$ -- 19
+write$ -- 154
+(There were 5 warnings)

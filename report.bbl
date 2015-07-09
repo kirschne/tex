@@ -13,6 +13,9 @@
 \bibitem{llvm}
 \emph{{LLVM}}, http://llvm.org.
 
+\bibitem{bitcode}
+\emph{{LLVM Bitcode File Format}}, http://llvm.org/docs/BitCodeFormat.html.
+
 \bibitem{qemu}
 \emph{{QEMU}}, http://qemu.org.
 

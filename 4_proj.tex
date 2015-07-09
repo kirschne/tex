@@ -2,7 +2,7 @@
 
 The practical part of this project strives to explore privacy issues in a sample binary.
 
-In order to make life easier, many people use little freeware applications on a regular basis.
+In order to make life easier, many people use small freeware applications on a regular basis.
 But most of these programs are proprietary and have to be trusted without any knowledge of their functioning.
 Real malware (Trojan horses, spyware, ...) is usually detected rather quickly by anti-virus software and can often be blocked effectively.
 However, between unambiguous malware and thoroughly benign software many shades of grey can be found.
@@ -10,7 +10,7 @@ However, between unambiguous malware and thoroughly benign software many shades 
 This work will focus on the scenario that an application (intentionally or unintentionally) leaks delicate private data without the user's consent or knowledge.
 
 
-Due to the difficulty of finding a real-world program which shows exactly this desired behaviour and also in general the complexity of real-world applications, the showcase described here bases on a little self-written program.
+Due to the difficulty of finding a real-world program which shows exactly this desired behaviour and also in general the complexity of real-world applications, the showcase described here bases on a small self-written program.
 
 The scenario works as follows: The freeware tool \app found in the internet claims to be handy for estimating your personal tax load.
 The tool announces to display a decent advertisement on every startup, which suggests a common and reasonably sound business model.
@@ -21,9 +21,10 @@ To make sure that \app does not compromise the user's privacy, it shall be analy
 \bigskip
 %             					\todo{obf}				-----
 For a general overview, often a good first step is to have a glance at the program's assembly code.
-Since static code analysis of large programs is usually a very time-consuming task, that is not what we want to do here.
+Of course we do not want to do too much static code analysis because it can be a very time-consuming task for large programs.
+%Since static code analysis of large programs is usually a very time-consuming task, that is not what we want to do here.
 Nevertheless, some useful information can be retrieved from the assembly code quite easily.
-A look at the list of invoked external libraries shows that \app communicates over network sockets, i.e.~uses the C library functions connect, write, etc.
+A look at the list of invoked external libraries shows that \app communicates over network sockets, i.e.~uses the C library functions \textit{connect}, \textit{write}, etc.
 %\todo{cmd}
 That is of course not really surprising as the program relies on advertisements as a business model.
 However, such connections to the internet are always delicate and could potentially leak personal data.
