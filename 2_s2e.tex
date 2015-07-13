@@ -5,11 +5,12 @@
 
 
 % -------- symbolic execution -------- %
-\textbf{Symbolic execution} is an advanced analysis technique.
+\textbf{Symbolic execution} is an advanced technique for analysing certain aspects of software programs.
+It rests upon the idea that variables in a program do not always need to hold concrete values but instead may be seen as expressions with constraints.
 % particularly suited for automated software testing \todo{ct} and malware analysis \todo{ct}.
-Instead of concrete input (7, ``string'', ...) symbolic execution uses symbolic values ($\lambda$, $\beta$, ...) when processing code.
+Instead of concrete input (7, ``string'', ...) symbolic execution uses symbolic values ($\lambda$, $\beta$, ...) when processing variables in the code. After the assignment \texttt{int} $x = 7$ the concrete value 7 may be replaced by an unconstrained symbolic value $\lambda$.
 Assignments in the program path have impacts on these symbolic values.
-The integer calculation $x = x - 2$, for instance, would update the symbolic expression representing the input $x$ to $\lambda - 2$.
+An integer calculation $x = x - 2$, for instance, would update the symbolic expression representing the input $x$ to $\lambda - 2$.
 Conditional statements (\textit{if <condition> then ... else ...}) fork program execution into two new paths.
 Both paths are then constrained by an additional condition, the `then' branch with the if-condition and the `else' branch with the negated if-condition respectively.
 Figure \ref{fig:introex} conceptually shows how source code can be transformed into symbolic expressions.
@@ -76,7 +77,8 @@ Hence only execution inside $libFn$ follows this technique.
 \textbf{Concrete} $\rightarrow$ \textbf{symbolic transition:}
 When execution enters the function $libFn$ it has to change from concrete into symbolic domain (grey areas).
 This is done by replacing concrete parameters in the method call with symbolic variables.
-The call $libFn(10)$ becomes $libFn(\lambda)$, optionally also with constraints: $libFn(\lambda \le 15)$.\\
+The call $libFn(10)$ becomes $libFn(\lambda)$.\\
+%, optionally also with constraints: $libFn(\lambda \le 15)$.\\
 Besides the symbolic multi-path execution, \sse simultaneously also runs the function with its original concrete arguments.
 This is necessary in order to return a feasible calculation result to $appFn$ and thus keep the execution of $App$ consistent.
 
@@ -111,8 +113,11 @@ The new sub-tree now picks a different concrete value for x which allows to ente
 \medskip
 %Consistency models...\todo{!}
 The ability to flexibly switch between symbolic and concrete execution enables \sse to handle different \textbf{execution consistency models}.
+Consistency models allow to precisely control where and how to employ symbolic execution.
+The user can thus strike a balance between under-approximation (only a subset of all feasible paths is explored $\rightarrow$ not complete but quick and no incorrect results) and over-approximation (a superset of all feasible paths is explored $\rightarrow$ slow but complete) of paths.
 Chipounov defines six distinct consistency models.
 For a basic understanding, the following paragraph will describe two of them (see \cite{chip14s2e}, p.~24ff for a detailed explanation of all models).
+The first presented model (\textit{SC-CE}) describes a naive form of testing (an example of under-approximation) while the latter (\textit{RC-OC}) presents an example for a model employing over-approximation.
 
 The most simple model is called \textit{strictly consistent concrete execution (SC-CE)}.
 This is the model which is applied when testing or debugging programs either manually or with input from random test case generators (fuzzing).
@@ -122,7 +127,7 @@ This model never produces false positives, i.e.~infeasible paths.
 
 One entirely different strategy is \textit{relaxed consistency overapproximate consistency (RC-OC)}.
 In this model constraints defined in API contracts can be ignored.
-Under \textit{RC-OC}, a call of the system function \textit{write(fd, buf, count)} would also allow return values larger than $count$, even though that is infeasible (assuming that the C library works correctly).
+Under \textit{RC-OC}, a call of the system function \textit{write(fd, buf, count)} would also allow return values larger than $count$, even though that is infeasible (assuming that the C library containing the function $write()$ works correctly).
 This behaviour can be particularly useful for reverse engineering or for finding vulnerabilities in a program.
 \textit{RC-OC} is not consistent (pursues many infeasible paths) but complete (eventually finds every valid path through the system).
 

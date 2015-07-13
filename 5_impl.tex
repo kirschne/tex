@@ -14,7 +14,8 @@ The next step is to precisely specify which variables shall be treated symbolica
 In general, as a start we want to make all user inputs symbolic.
 For a closed source binary this can be done in several ways.
 A command line tool can be called from a wrapper program which hands over symbolic arguments instead of concrete ones.
-If user input is entered in a UI, a further look into the assembly code is necessary in order to find the memory locations where the corresponding variables are written.%\todo{..}
+If user input is entered in a UI, a further look into the assembly code is necessary in order to find the memory locations where the corresponding variables are written. 
+%\todo{..}
 %look for ... calls...
 \sse can intercept execution of the specified memory addresses and replace them with symbolic values (state:writeMemorySymb(\ldots)).
 %\todo{con?}
