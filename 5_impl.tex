@@ -22,7 +22,8 @@ If user input is entered in a UI, a further look into the assembly code is neces
 % consistency models?????
 
 KLEE, the engine for symbolic execution, also requires some configuration.
-As path search strategy this analysis uses a depth first search.
+Besides verbosity level definitions like \textit{verbose-state-switching=true} and switches to fine-control symbolic execution (e.g., \textit{allow-external-sym-calls=false}) the most important configuration option is the desired search strategy.
+This analysis uses a depth first search as path search strategy (\textit{use-dfs-search=true}).
 %\todo{..}
 
 \bigskip

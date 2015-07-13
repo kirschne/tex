@@ -39,6 +39,7 @@ Simply debugging the program should already lead to a rough understanding of the
 %  \todo{cit} fuzzing
 Applying techniques like fuzzing could increase code coverage with the goal of not missing exotic or covert execution paths.
 This paper, however, will rely on analysis using selective symbolic execution as described in chapter \ref{sec:s2e}.
+The presented project tries to employ \sse's potential and benefit from advantages like the guaranteed completeness of the tree of execution paths.
 % \todo{why}
 
 \bigskip
@@ -46,7 +47,7 @@ This paper, however, will rely on analysis using selective symbolic execution as
 Before proceeding with the actual analysis, a few notes on the general setup: 
 Since \sse works best with x86 guest architectures, \app was compiled on a x86 Debian system using standard GNU tools (g++).
 For the sake of convenience in this sample scenario the resulting application binary is neither overly optimised nor in any way obfuscated.
-As a consequence, the assembly code still contains meaningful variable and function names.
+As a consequence, the assembly code still contains meaningful global variable and function names.
 
 
 \iffalse
