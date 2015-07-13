@@ -61,6 +61,11 @@ Vitaly Chipounov, Volodymyr Kuznetsov, and George Candea, \emph{{S2E: A
   Conference on Architectural Support for Programming Languages and Operating
   Systems (ASPLOS), 2011.
 
+\bibitem{kuznetsov2010testing}
+Volodymyr Kuznetsov, Vitaly Chipounov, and George Candea, \emph{{Testing
+  Closed-Source Binary Device Drivers with DDT}}, USENIX Annual Technical
+  Conference, no. EPFL-CONF-147243, 2010.
+
 \bibitem{llvm04}
 Chris Lattner and Vikram Adve, \emph{{LLVM: A Compilation Framework for
   Lifelong Program Analysis \& Transformation}}, Code Generation and

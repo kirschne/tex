@@ -62,7 +62,8 @@ Output of these inspection activities have to be extracted from the \sse's main 
 Based on the output resulting from annotating the function \textit{send\_data}, which includes reading out the parameter the method is called with (see listing \ref{lst:send_data}), messages sent to the internet can be classified into three categories:
 \begin{enumerate}
 \item A command ``load\_ad'', which leads to a server response containing an advertisement for the user.
-\item A command ``donate'', which entails a static message from the server prompting the user to donate to the poor programmer. Output messages $1.)$ and $2.)$ do not contain any further data apart from the command.
+\item A command ``donate'', which entails a static message from the server prompting the user to donate to the poor programmer. \medskip \\
+Output messages $1.)$ and $2.)$ do not contain any further data apart from the command.
 \item A message depending on both symbolic variables $income$ and $taxcat$.
 It always starts with the keyword ``found\_hit'', followed by all data the user has entered.
 Message fields are separated by a colon and stick to the order `user name', `birth date', `income' and `tax category'. Example: ``found\_hit:name:1.1.77:16777216:1''.

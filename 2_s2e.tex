@@ -128,7 +128,8 @@ This model never produces false positives, i.e.~infeasible paths.
 One entirely different strategy is \textit{relaxed consistency overapproximate consistency (RC-OC)}.
 In this model constraints defined in API contracts can be ignored.
 Under \textit{RC-OC}, a call of the system function \textit{write(fd, buf, count)} would also allow return values larger than $count$, even though that is infeasible (assuming that the C library containing the function $write()$ works correctly).
-This behaviour can be particularly useful for reverse engineering or for finding vulnerabilities in a program.
+Kuznetsov et al.~\cite{kuznetsov2010testing} and Chipounov and Candea \cite{chipounov2010reverse} claim that this behaviour can be particularly useful for reverse engineering or for finding vulnerabilities in a program.
+They argue that including some ``allegedly impossible hardware behaviours [...] improves the quality of the reverse engineering'' \cite[p. 11]{chip12s2e}.\\
 \textit{RC-OC} is not consistent (pursues many infeasible paths) but complete (eventually finds every valid path through the system).
 
 
