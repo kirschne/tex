@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  13 JUL 2015 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.13)  13 JUL 2015 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,21 +999,22 @@ LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
 (Font)              for symbol `textbullet' on input line 138.
 
 [10]) (./7_outlook.tex) (./8_rel_work.tex [11]) (./9_conclusion.tex)
-(./report.bbl [12]) 
+(./report.bbl [12]) (./A_appendix.tex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 5.
+) 
 AED: lastpage setting LastPage
-[13
-
-] (./report.aux)
+[13] (./report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20830 strings out of 493109
- 377064 string characters out of 6135004
- 778044 words of memory out of 5000000
- 23315 multiletter control sequences out of 15000+600000
- 122072 words of font info for 519 fonts, out of 8000000 for 9000
+ 21025 strings out of 493109
+ 379373 string characters out of 6135004
+ 1071062 words of memory out of 5000000
+ 23501 multiletter control sequences out of 15000+600000
+ 122986 words of font info for 525 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,58p,678b,2161s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1026,24 +1027,25 @@ xmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
 pe1/public/fpl/fplrij8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
-lic/cm-super/sfit0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/cm-super/sftt0800.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
-cm-super/sftt0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm
--super/sftt1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helveti
-c/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvbo
-8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on report.pdf (13 pages, 875101 bytes).
+lic/cm-super/sfit0800.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/cm-super/sfit0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+cm-super/sftt0800.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm
+-super/sftt0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-s
+uper/sftt1095.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/
+uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a
+.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on report.pdf (13 pages, 915219 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
+ 339 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 71718 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 72742 words of extra memory for PDF output out of 74296 (max. 10000000)
 

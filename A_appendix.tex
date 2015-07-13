@@ -1,0 +1,121 @@
+\section*{Appendix: SuperTaxCalcPro Code}\label{sec:appendix}
+
+% -------------------------------------------------------------------
+\begin{lstlisting}[basicstyle=\ttfamily\tiny, caption={C++ code of \app. Notes:\\ - For performance reasons all output is escaped. \\ - Due to an unresolved int32\_to\_floatx80 conversion problem in KLEE, type conversions are generally avoided (only integer calculations). Correctness of tax calculations does not matter here anyway.}, label={lst:appendix}, morekeywords={movl, movw, cmpl}]
+int category = 0;
+// Calculations roughly following https://www.bmf-steuerrechner.de/ekst/ekst.jsp 2014-2015
+int calc_tax(int *income, int *taxcat) {
+    if (*income < 8354) {
+        return 0;
+    } else if (*income < 13469) {
+        int y = (*income - 8354)/10000;
+        return (974.58 * y + 1400) * y;
+    } else if (*income < 52881) {
+        int y = (*income - 13469)/10000;
+        return (229 * y + 2397) * y + 971;
+    } else if (*income < 250730) {
+        // Not too poor! Can donate something...
+        category = 1;
+	if (*taxcat == 1 || *taxcat == 4)
+            return 1 * *income - 8239;
+	else
+            return 1 * *income - 8239 - 324;
+    } else {
+        // Found rich guy! Exploit!
+        category = 1;
+	if (*taxcat == 1 || *taxcat == 4 || *taxcat == 6) {
+	    category = 2;
+            return 1 * *income - 15761 + 2424;
+	} else
+            return 1 * *income - 15761;
+    }
+}
+//void get_user_inputs(string *name, string *birth, int *income, int *taxcat) { ... }
+void error(const char *msg)
+{
+    //perror(msg);
+    exit(0);
+}
+int send_data(char message[256]) {
+    int sockfd, portno, n;
+    struct sockaddr_in serv_addr;
+    struct hostent *server;
+    char buffer[256];
+    strcpy(buffer, message);
+    portno = 1337;
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0)
+        error("ERROR opening socket");
+    server = gethostbyname("localhost");
+    if (server == NULL) {
+        //fprintf(stderr,"ERROR, no such host\n");
+        exit(0);
+    }
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    bcopy((char *)server->h_addr,
+          (char *)&serv_addr.sin_addr.s_addr,
+          server->h_length);
+    serv_addr.sin_port = htons(portno);
+    if (connect(sockfd,(struct sockaddr *) &serv_addr,sizeof(serv_addr)) < 0)
+        error("ERROR connecting");
+    n = write(sockfd,buffer,strlen(buffer));
+    if (n < 0)
+        error("ERROR writing to socket");
+    bzero(buffer,256);
+    n = read(sockfd,buffer,255);
+    if (n < 0)
+        error("ERROR reading from socket");
+    close(sockfd);
+    return 0;
+}
+int load_ad() {
+    char msg[8] = "load_ad";
+    return send_data(msg);
+}
+int ask_donate() {
+    char msg[7] = "donate";
+    return send_data(msg);
+}
+int report_hit(string *name, string *birth, int *income, int *taxcat) {
+    string message = "found_hit:" + *name + ":" + *birth + ":" + to_string(*income) + ":" + to_string(*taxcat);
+    char msg[11 + sizeof(message)] = "found_hit:";
+    strcpy(msg, message.c_str());
+    return send_data(msg);
+}
+int main(int argc, const char * argv[]) {
+   // cout << "\n++++\t Welcome to SuperTaxCalcPro \t++++ \n\n SuperTaxCalcPro helps you with calculating your estimated tax load. \n\n Being freeware, SuperTaxCalcPro will display a little advertisement. \n Please also donate if this software has helped you. \n\n Step 1: Personal Data: \n";
+    s2e_enable_forking();
+    s2e_message("------program starting...");    
+    string name, birth;
+    int income, taxcat;
+    name = "name";
+    birth = "1.1.77";
+    //get_user_inputs(&name, &birth, &income, &taxcat);
+    s2e_make_symbolic(&income, sizeof(income), "income");
+    s2e_make_symbolic(&taxcat, sizeof(taxcat), "taxcat");
+    //cout << "\nNow please have a look at this beautiful advertisement:\n";
+    load_ad();
+    if (income <= 0 || taxcat > 6 || taxcat < 1) {
+	s2e_message("-----program exiting. Strange inputs!");
+        //cout << "Input does not make sense! Exiting.\n";
+    } else {
+        int tax = calc_tax(&income, &taxcat);
+        //cout << "Estimated tax load: " <<tax<< " Euros\n";
+        if (category == 2 && (taxcat == 1 || taxcat == 4)) {
+	    s2e_message("------program leaking data.");
+            report_hit(&name, &birth, &income, &taxcat);
+        }
+        if (category == 1 || category == 2) {
+	    s2e_message("------prog asking for a donation.");
+            ask_donate();
+        }
+    }
+    s2e_message("-------program finished");
+    s2e_disable_forking();
+    s2e_get_example(&income, sizeof(income));
+    s2e_get_example(&taxcat, sizeof(taxcat));
+    s2e_kill_state(0, "success");
+    return 0;
+}
+\end{lstlisting}
