@@ -1,9 +1,9 @@
 \section*{Appendix: SuperTaxCalcPro Code}\label{sec:appendix}
 
 % -------------------------------------------------------------------
-\begin{lstlisting}[basicstyle=\ttfamily\tiny, caption={C++ code of \app. Notes:\\ - For performance reasons all output is escaped. \\ - Due to an unresolved int32\_to\_floatx80 conversion problem in KLEE, type conversions are generally avoided (only integer calculations). Correctness of tax calculations does not matter here anyway.}, label={lst:appendix}, morekeywords={movl, movw, cmpl}]
+\begin{lstlisting}[basicstyle=\ttfamily\tiny, caption={C++ code of \app. Notes:\\ - Code already contains \sse annotations. \\ - For performance reasons all output is escaped. \\ - Due to an unresolved int32\_to\_floatx80 conversion problem in KLEE, type conversions are generally avoided (only integer calculations are used). Correctness of tax calculations does not matter here anyway.}, label={lst:appendix}, morekeywords={movl, movw, cmpl}]
 int category = 0;
-// Calculations roughly following https://www.bmf-steuerrechner.de/ekst/ekst.jsp 2014-2015
+// Calculations more or less follow https://www.bmf-steuerrechner.de/ekst/ekst.jsp 2014-2015
 int calc_tax(int *income, int *taxcat) {
     if (*income < 8354) {
         return 0;
@@ -87,15 +87,19 @@ int main(int argc, const char * argv[]) {
    // cout << "\n++++\t Welcome to SuperTaxCalcPro \t++++ \n\n SuperTaxCalcPro helps you with calculating your estimated tax load. \n\n Being freeware, SuperTaxCalcPro will display a little advertisement. \n Please also donate if this software has helped you. \n\n Step 1: Personal Data: \n";
     s2e_enable_forking();
     s2e_message("------program starting...");    
+    
     string name, birth;
     int income, taxcat;
     name = "name";
     birth = "1.1.77";
     //get_user_inputs(&name, &birth, &income, &taxcat);
+    
     s2e_make_symbolic(&income, sizeof(income), "income");
     s2e_make_symbolic(&taxcat, sizeof(taxcat), "taxcat");
+    
     //cout << "\nNow please have a look at this beautiful advertisement:\n";
     load_ad();
+    
     if (income <= 0 || taxcat > 6 || taxcat < 1) {
 	s2e_message("-----program exiting. Strange inputs!");
         //cout << "Input does not make sense! Exiting.\n";

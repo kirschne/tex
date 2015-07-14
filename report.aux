@@ -52,12 +52,12 @@
 \newlabel{sec:proj}{{4}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Implementation}{5}}
 \newlabel{sec:impl}{{5}{5}}
-\newlabel{lst:ass}{{1}{5}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Relevant parts of the function \textit  {send\_data} in assembly code. Interesting calls are highlighted.}{5}}
+\newlabel{lst:ass}{{1}{6}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Relevant parts of the function \textit  {send\_data()} in assembly code. Interesting calls are highlighted.}{6}}
 \newlabel{lst:ann_def}{{2}{6}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Configuration of the \textit  {Annotations} plugin (part). Defines the instructions to be monitored and actions to trigger upon execution of these instructions. Note the link to the binary in listing \ref  {lst:ass} via memory addresses.}{6}}
-\newlabel{lst:send_data}{{3}{6}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Lua function executed upon every call of the function send\_data(). See lines 18 - 24 in listing \ref  {lst:ann_def} for the registration of \textit  {call\_ann}.}{6}}
+\newlabel{lst:send_data}{{3}{7}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Lua function executed upon every call of the function \textit  {send\_data()}. See lines 18 - 24 in listing \ref  {lst:ann_def} for the registration of \textit  {call\_ann()}.}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Analysis of S\textsuperscript  {2}E\xspace  Output}{7}}
 \newlabel{sec:ana}{{6}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Tree visualisation for understanding path forking behaviour in the analysis of \textit  {SuperTaxCalcPro}\xspace  . Shows at which memory addresses S\textsuperscript  {2}E\xspace  forked new execution states. Path constraints are printed at each state transition. For most states, the \textit  {TestCaseGenerator} found meaningful concrete example values for the two symbolic variables $income$ and $taxcat$. Blue dots symbolise that in this state a ``donation'' message was transferred to a server. Red dots mark states which leak the complete set of user inputs.\relax }}{9}}
@@ -96,7 +96,7 @@
 \bibcite{chip12s2e}{18}
 \newlabel{sec:appendix}{{9}{13}}
 \newlabel{lst:appendix}{{4}{13}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}C++ code of \textit  {SuperTaxCalcPro}\xspace  . Notes:\\ - For performance reasons all output is escaped. \\ - Due to an unresolved int32\_to\_floatx80 conversion problem in KLEE, type conversions are generally avoided (only integer calculations). Correctness of tax calculations does not matter here anyway.}{13}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}C++ code of \textit  {SuperTaxCalcPro}\xspace  . Notes:\\ - Code already contains S\textsuperscript  {2}E\xspace  annotations. \\ - For performance reasons all output is escaped. \\ - Due to an unresolved int32\_to\_floatx80 conversion problem in KLEE, type conversions are generally avoided (only integer calculations are used). Correctness of tax calculations does not matter here anyway.}{13}}
 \newlabel{LastPage}{{}{13}}
 \xdef\lastpage@lastpage{13}
 \gdef\lastpage@lastpageHy{}
