@@ -29,7 +29,7 @@ This analysis uses a depth first search as path search strategy (\textit{use-dfs
 \bigskip
 % -------------------------------------------------------------------
 \begin{lstlisting}[language={[x86masm]Assembler}, escapeinside={(*§}{§*)}, basicstyle=\ttfamily\scriptsize, caption={Relevant parts of the function \textit{send\_data} in assembly code. Interesting calls are highlighted.}, label={lst:ass}, morekeywords={movl, movw, cmpl}]
-08049415 (*§\hl{send\_data(char*):}§*)
+08049415 (*§\hl{<send\_data(char*)>:}§*)
 		.
 		.
  8049451:   call   8048f10 <socket@plt>
@@ -38,9 +38,9 @@ This analysis uses a depth first search as path search strategy (\textit{use-dfs
  80494f2:   call   8048e00 (*§\hl{<connect@plt>}§*)
  80494f7:   shr    $0x1f,%eax
  80494fa:   test   %al,%al
- 80494fc:   je     804950a				 <_Z9send_dataPc+0xf5>
+ 80494fc:   je     804950a				 <send_data(char*)+0xf5>
  80494fe:   movl   $0x804a083,(%esp)
- 8049505:   call   8049403 <_Z5errorPKc>
+ 8049505:   call   8049403<error(char const*)>
  804950a:   lea    -0x128(%ebp),%eax
  8049510:   mov    %eax,(%esp)
  8049513:   call   8048f30 <strlen@plt>
